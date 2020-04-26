@@ -59,10 +59,25 @@ public class TimeInstance {
         return otherTime.getTotalTimeMin() < this.getTotalTimeMin();
     }
 
+    /**
+     * Adds time to this time
+     * @param minutes the minutes we want to add
+     * @return a new time which holds the value of thisTime + minutes
+     */
+    public TimeInstance addTime(int minutes){
+        int numDays = minutes / (24 * 60);
+        minutes -= numDays * 24 * 60;
+
+        int numHours = minutes / 60;
+        minutes -= numHours * 60;
+
+        return new TimeInstance(dayList.get(dayList.indexOf(this.day) + numDays), this.hour + numHours, this.min + minutes);
+    }
+
 
     @Override
     public boolean equals(Object o) {
-        if(o instanceof TimeInstance && o != null){
+        if(o instanceof TimeInstance){
             TimeInstance that = (TimeInstance) o;
             return hour == that.hour && min == that.min && day == that.day;
         }
