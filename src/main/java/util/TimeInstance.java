@@ -8,7 +8,7 @@ public class TimeInstance {
 
     private Day day;
     private int hour, min;
-    private List<Day> dayList = new ArrayList<>(Arrays.asList(Day.MON, Day.TUES, Day.WED, Day.THURS, Day.FRI));
+    private final List<Day> dayList = new ArrayList<>(Arrays.asList(Day.MON, Day.TUES, Day.WED, Day.THURS, Day.FRI));
 
     public TimeInstance(Day day, int hour, int min){
         this.hour = hour;
@@ -51,12 +51,12 @@ public class TimeInstance {
     }
 
     /**
-     * Determines if thisTime is after otherTime
+     * Determines if thisTime is after or equal to otherTime
      * @param otherTime the other time to compare
-     * @return true if thisTime is after otherTime
+     * @return true if thisTime is after or equal to otherTime
      */
     public boolean isAfter(TimeInstance otherTime){
-        return otherTime.getTotalTimeMin() < this.getTotalTimeMin();
+        return otherTime.getTotalTimeMin() <= this.getTotalTimeMin();
     }
 
     /**
@@ -79,7 +79,7 @@ public class TimeInstance {
     public boolean equals(Object o) {
         if(o instanceof TimeInstance){
             TimeInstance that = (TimeInstance) o;
-            return hour == that.hour && min == that.min && day == that.day;
+            return this.hour == that.hour && this.min == that.min && this.day.equals(that.day);
         }
         return false;
     }

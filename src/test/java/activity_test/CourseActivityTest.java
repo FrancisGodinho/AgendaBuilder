@@ -31,52 +31,61 @@ public class CourseActivityTest {
         CourseActivity activity = new CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
 
         List<Duration> resultList = activity.getCourseTimes();
-        Assert.assertTrue(resultList.equals(expectedList));
 
+        Assert.assertEquals(resultList, expectedList);
     }
 
 
-//must finish ============================================================================= //TODO: FINISH THIS THING
     @Test
     public void doesConflitTest1(){
 
         //first activity
         TimeInstance start1 = new TimeInstance(Day.MON, 12, 00);
-        TimeInstance end1 = new TimeInstance(Day.MON, 13, 00);
+        TimeInstance end1 = new TimeInstance(Day.MON, 14, 00);
         TimeInstance start2 = new TimeInstance(Day.WED, 12, 00);
-        TimeInstance end2 = new TimeInstance(Day.WED, 13, 00);
+        TimeInstance end2 = new TimeInstance(Day.WED, 14, 00);
 
         CourseSection section = new CourseSection(001);
         CourseActivity activity1 = new CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
 
         //second activity
-        start1 = new TimeInstance(Day.MON, 12, 00);
-        end1 = new TimeInstance(Day.MON, 13, 00);
-        start2 = new TimeInstance(Day.WED, 12, 00);
-        end2 = new TimeInstance(Day.WED, 13, 00);
+        start1 = new TimeInstance(Day.MON, 13, 00);
+        end1 = new TimeInstance(Day.MON, 15, 00);
+        start2 = new TimeInstance(Day.WED, 13, 00);
+        end2 = new TimeInstance(Day.WED, 15, 00);
 
         section = new CourseSection(001);
-        CourseActivity activity2 = new CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
+        CourseActivity activity2 = new CourseActivity("MATH", 253, section, start1, end1, start2, end2);
 
         //third activity
-        start1 = new TimeInstance(Day.MON, 12, 00);
-        end1 = new TimeInstance(Day.MON, 13, 00);
-        start2 = new TimeInstance(Day.WED, 12, 00);
+        start1 = new TimeInstance(Day.MON, 16, 00);
+        end1 = new TimeInstance(Day.MON, 17, 00);
+        start2 = new TimeInstance(Day.WED, 12, 30);
         end2 = new TimeInstance(Day.WED, 13, 00);
 
         section = new CourseSection(001);
-        CourseActivity activity3 = new CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
+        CourseActivity activity3 = new CourseActivity("MATH", 307, section, start1, end1, start2, end2);
 
         //fourth activity
-        start1 = new TimeInstance(Day.MON, 12, 00);
-        end1 = new TimeInstance(Day.MON, 13, 00);
-        start2 = new TimeInstance(Day.WED, 12, 00);
-        end2 = new TimeInstance(Day.WED, 13, 00);
+        start1 = new TimeInstance(Day.WED, 9, 00);
+        end1 = new TimeInstance(Day.WED, 12, 00);
+        start2 = new TimeInstance(Day.FRI, 12, 00);
+        end2 = new TimeInstance(Day.FRI, 13, 00);
 
         section = new CourseSection(001);
-        CourseActivity activity4 = new CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
+        CourseActivity activity4 = new CourseActivity("CPSC", 261, section, start1, end1, start2, end2);
 
+        Assert.assertTrue(activity1.doesConflict(activity2));
+        Assert.assertTrue(activity1.doesConflict(activity3));
+        Assert.assertFalse(activity1.doesConflict(activity4));
+        Assert.assertTrue(activity1.doesConflict(activity1));
+        Assert.assertFalse(activity2.doesConflict(activity3));
+        Assert.assertFalse(activity4.doesConflict(activity2));
+        Assert.assertFalse(activity4.doesConflict(activity3));
 
-
+        Assert.assertTrue(activity1.doesConflict(activity1));
+        Assert.assertTrue(activity2.doesConflict(activity2));
+        Assert.assertTrue(activity3.doesConflict(activity3));
+        Assert.assertTrue(activity4.doesConflict(activity4));
     }
 }

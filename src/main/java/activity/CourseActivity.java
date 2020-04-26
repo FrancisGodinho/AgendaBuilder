@@ -2,6 +2,8 @@ package main.java.activity;
 
 import main.java.util.TimeInstance;
 import main.java.util.Duration;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class CourseActivity {
@@ -12,11 +14,24 @@ public class CourseActivity {
     private List<Duration> courseTimes;
 
     public CourseActivity(String courseName, int courseNum, CourseSection courseSection, List<Duration> courseTimes){
-        //TODO: Complete this method
+        this.courseName = courseName;
+        this.courseNum = courseNum;
+        this.courseSection = courseSection;
+        this.courseTimes = new ArrayList<>();
+        for(Duration dur : courseTimes)
+            this.courseTimes.add(dur);
     }
 
     public CourseActivity(String courseName, int courseNum, CourseSection courseSection, TimeInstance... courseTimes){
-        //TODO: Complete this method
+        this.courseName = courseName;
+        this.courseNum = courseNum;
+        this.courseSection = courseSection;
+        this.courseTimes = new ArrayList<>();
+        for(int i = 0; i < courseTimes.length; i += 2){
+            Duration dur = new Duration(courseTimes[i], courseTimes[i + 1]);
+            this.courseTimes.add(dur);
+        }
+
     }
 
     /**
@@ -47,9 +62,11 @@ public class CourseActivity {
      * gets a list of the course times
      * @return a list of the course times
      */
-    public List<Duration>getCourseTimes(){
-        //TODO: Complete this method
-        return null;
+    public List<Duration> getCourseTimes(){
+        List<Duration> retList = new ArrayList<>();
+        for(Duration dur : courseTimes)
+            retList.add(dur);
+        return retList;
     }
 
     /**
@@ -58,10 +75,28 @@ public class CourseActivity {
      * @return true if the conflict, false otherwise
      */
     public boolean doesConflict(CourseActivity otherActivity){
-        //TODO: Complete this method
-        //must do this in O(n) time
-        return true;
+
+        List<Duration> testDurations = otherActivity.getCourseTimes();
+
+        for(Duration testDur : testDurations)
+            for(Duration currDur : courseTimes)
+                if(durConflict(currDur, testDur))
+                    return true;
+
+        return false;
     }
+
+    /**
+     * Determines if two durations conflict
+     * @param dur1 the first duration
+     * @param dur2 the second duration
+     * @return true if the two durations conflict, false otherwise
+     */
+    private boolean durConflict(Duration dur1, Duration dur2){
+        return !((dur1.getFirstTime().isAfter(dur2.getFirstTime()) && dur1.getFirstTime().isAfter(dur2.getSecondTime())) ||
+                (dur2.getFirstTime().isAfter(dur1.getFirstTime()) && dur2.getFirstTime().isAfter(dur1.getSecondTime())));
+    }
+
 
     @Override
     public boolean equals(Object o) {

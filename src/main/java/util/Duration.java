@@ -35,4 +35,16 @@ public class Duration {
     public int getDurationMin(){
         return timeInstance2.getTotalTimeMin() - timeInstance1.getTotalTimeMin();
     }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof Duration){
+            Duration that = (Duration) o;
+            return that.timeInstance1.equals(this.timeInstance1) && that.timeInstance2.equals(this.timeInstance2);
+        }
+        return false;
+    }
+
 }
