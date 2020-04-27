@@ -21,6 +21,8 @@ public class TimeTable {
      *          successfully, false otherwise.
      */
     public boolean addActivity(CourseActivity activity){
+        if(activity == null)
+            throw new IllegalArgumentException("Activity cannot be null");
         return activityList.add(activity);
     }
 

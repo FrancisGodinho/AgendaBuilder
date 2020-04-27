@@ -8,7 +8,7 @@ public class TimeInstance {
 
     private Day day;
     private int hour, min;
-    private final List<Day> dayList = new ArrayList<>(Arrays.asList(Day.MON, Day.TUES, Day.WED, Day.THURS, Day.FRI));
+    private static final List<Day> dayList = new ArrayList<>(Arrays.asList(Day.MON, Day.TUES, Day.WED, Day.THURS, Day.FRI));
 
     public TimeInstance(Day day, int hour, int min){
         this.hour = hour;

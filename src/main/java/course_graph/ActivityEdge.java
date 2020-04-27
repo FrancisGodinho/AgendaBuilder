@@ -1,8 +1,6 @@
 package main.java.course_graph;
 
-import main.java.activity.CourseActivity;
 
-import javax.swing.text.EditorKit;
 import java.util.NoSuchElementException;
 
 public class ActivityEdge {

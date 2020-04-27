@@ -3,6 +3,7 @@ package main.java.activity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class CourseSection {
 
@@ -31,24 +32,33 @@ public class CourseSection {
     /**
      * get the lab section
      * @return the lab section
+     * @throws NoSuchElementException if there is no lab associated
      */
-    public String getLab() {
+    public String getLab() throws NoSuchElementException{
+        if(lab == null)
+            throw new NoSuchElementException("No lab found");
         return lab;
     }
 
     /**
      * get the tutorial section
      * @return the tutorial section
+     * @throws NoSuchElementException if there is no tutorial associated
      */
-    public String getTutorial(){
+    public String getTutorial() throws NoSuchElementException{
+        if(lab == null)
+            throw new NoSuchElementException("No tutorial found");
         return tutorial;
     }
 
     /**
      * get the discussion section
      * @return the discussion section
+     * @throws NoSuchElementException if there is no discussion associated
      */
-    public String getDiscussion(){
+    public String getDiscussion() throws NoSuchElementException{
+        if(lab == null)
+            throw new NoSuchElementException("No discussion found");
         return discussion;
     }
 

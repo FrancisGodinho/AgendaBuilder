@@ -23,6 +23,10 @@ public class CourseActivity {
     }
 
     public CourseActivity(String courseName, int courseNum, CourseSection courseSection, TimeInstance... courseTimes){
+
+        if(courseTimes.length % 2 != 0)
+            throw new IllegalArgumentException("Course times is missing an end time");
+
         this.courseName = courseName;
         this.courseNum = courseNum;
         this.courseSection = courseSection;
@@ -31,7 +35,6 @@ public class CourseActivity {
             Duration dur = new Duration(courseTimes[i], courseTimes[i + 1]);
             this.courseTimes.add(dur);
         }
-
     }
 
     /**
