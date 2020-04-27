@@ -37,7 +37,6 @@ public class Duration {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if(o instanceof Duration){
@@ -45,6 +44,13 @@ public class Duration {
             return that.timeInstance1.equals(this.timeInstance1) && that.timeInstance2.equals(this.timeInstance2);
         }
         return false;
+    }
+
+    @Override
+    public int hashCode(){
+        int result = timeInstance1.hashCode() ^ (timeInstance1.hashCode() >>> 32);
+        result = 31 * result + timeInstance2.hashCode() ^ (timeInstance2.hashCode() >>> 32);
+        return result;
     }
 
 }

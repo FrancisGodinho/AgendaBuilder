@@ -7,16 +7,27 @@ public class Course {
 
     private List<CourseActivity> activityList;
 
+    /**
+     * Create new Course
+     */
     public Course(){
         activityList = new ArrayList<>();
     }
 
+    /**
+     * Create new Course
+     * @param courses a list of course activities
+     */
     public Course(List<CourseActivity> courses){
         activityList = new ArrayList<>();
         for(CourseActivity activity : courses)
             activityList.add(activity);
     }
 
+    /**
+     * Create a new Course
+     * @param courses course activities
+     */
     public Course(CourseActivity... courses){
         activityList = new ArrayList<>();
         for(CourseActivity activity : courses)
@@ -50,6 +61,18 @@ public class Course {
     }
 
 
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof Course){
+            Course that = (Course) o;
+            return that.activityList.equals(this.activityList);
+        }
+        return false;
+    }
 
+    @Override
+    public int hashCode(){
+        return activityList.hashCode();
+    }
 
 }

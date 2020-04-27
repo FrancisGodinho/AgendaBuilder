@@ -1,9 +1,7 @@
 package main.java.timetable;
 
-import main.java.activity.Course;
 import main.java.activity.CourseActivity;
 import main.java.util.Duration;
-import main.java.util.TimeInstance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +74,21 @@ public class TimeTable {
         for(CourseActivity act : activityList)
             retList.add(act);
         return retList;
+    }
+
+
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof TimeTable){
+            TimeTable that = (TimeTable) o;
+            return this.activityList.equals(that.activityList);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return activityList.hashCode();
     }
 
 
