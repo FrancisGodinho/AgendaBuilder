@@ -22,6 +22,7 @@ public class MainGUI extends JFrame{
         gui.setSize(1024, 768);
         gui.setVisible(true);
     }
+    
 
 
 
