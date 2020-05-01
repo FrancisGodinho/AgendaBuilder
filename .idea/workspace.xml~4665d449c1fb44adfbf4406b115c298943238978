@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc90284b-23c8-4a52-98ba-7b9c0eef5bf5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/course_graph/ActivityGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/course_graph/ActivityGraph.java" afterDir="false" />
     </list>
@@ -30,6 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1bJq8vCo3YTyHfcMScixLJ3HqrY" />
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -37,7 +39,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -53,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.test.java in AgendaBuilder">
+  <component name="RunManager" selected="JUnit.UBCCourseActivityTest">
     <configuration name="TimeInstanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaBuilder" />
       <extension name="coverage">
@@ -132,9 +134,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.test.java in AgendaBuilder" />
-        <item itemvalue="JUnit.TimeInstanceTest" />
         <item itemvalue="JUnit.UBCCourseActivityTest" />
+        <item itemvalue="JUnit.TimeInstanceTest" />
+        <item itemvalue="JUnit.test.java in AgendaBuilder" />
         <item itemvalue="JUnit.UBCCourseActivityTest.getCourseTimesTest" />
         <item itemvalue="JUnit.UBCCourseActivityTest.doesConflitTest1" />
       </list>
@@ -151,31 +153,12 @@
       <option name="presentableId" value="Default" />
       <updated>1587857124936</updated>
     </task>
-    <task id="LOCAL-00001" summary="implemented some methods for ActivityGraph">
-      <created>1588360864442</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1588360864443</updated>
-    </task>
-    <task id="LOCAL-00002" summary="implemented some methods for ActivityGraph">
-      <created>1588366943841</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1588366943841</updated>
-    </task>
-    <task id="LOCAL-00003" summary="implemented some methods for ActivityGraph">
-      <created>1588367569947</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1588367569947</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="CourseActivityTest_doesConflitTest1 - 2020.04.26 at 15h 17m 04s.xml">
+      <configuration name="CourseActivityTest.doesConflitTest1" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="CourseActivityTest_doesConflitTest1 - 2020.04.26 at 15h 17m 09s.xml">
       <configuration name="CourseActivityTest.doesConflitTest1" configurationId="JUnit" />
     </history-entry>
@@ -203,9 +186,6 @@
     <history-entry file="TimeInstanceTest - 2020.05.01 at 11h 41m 32s.xml">
       <configuration name="TimeInstanceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_java_in_AgendaBuilder - 2020.05.01 at 12h 21m 03s.xml">
-      <configuration name="test.java in AgendaBuilder" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -216,9 +196,16 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented some methods for ActivityGraph" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented some methods for ActivityGraph" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -237,16 +224,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/activity/UBC_CourseActivity.java</url>
           <line>35</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/util/Duration.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/util/Duration.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -311,7 +288,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
