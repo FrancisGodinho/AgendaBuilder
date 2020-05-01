@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fc90284b-23c8-4a52-98ba-7b9c0eef5bf5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/course_graph/ActivityGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/course_graph/ActivityGraph.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>section</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bJq8vCo3YTyHfcMScixLJ3HqrY" />
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.UBCCourseActivityTest">
+    <configuration name="TimeInstanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaBuilder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.util_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.util_test" />
+      <option name="MAIN_CLASS_NAME" value="test.java.util_test.TimeInstanceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UBCCourseActivityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaBuilder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.activity_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.activity_test" />
+      <option name="MAIN_CLASS_NAME" value="test.java.activity_test.UBCCourseActivityTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UBCCourseActivityTest.doesConflitTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaBuilder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.activity_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.activity_test" />
+      <option name="MAIN_CLASS_NAME" value="test.java.activity_test.UBCCourseActivityTest" />
+      <option name="METHOD_NAME" value="doesConflitTest1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UBCCourseActivityTest.getCourseTimesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaBuilder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.activity_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.activity_test" />
+      <option name="MAIN_CLASS_NAME" value="test.java.activity_test.UBCCourseActivityTest" />
+      <option name="METHOD_NAME" value="getCourseTimesTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.java in AgendaBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaBuilder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UBCCourseActivityTest" />
+        <item itemvalue="JUnit.TimeInstanceTest" />
+        <item itemvalue="JUnit.test.java in AgendaBuilder" />
+        <item itemvalue="JUnit.UBCCourseActivityTest.getCourseTimesTest" />
+        <item itemvalue="JUnit.UBCCourseActivityTest.doesConflitTest1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc90284b-23c8-4a52-98ba-7b9c0eef5bf5" name="Default Changelist" comment="" />
+      <created>1587857124936</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587857124936</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="CourseActivityTest_doesConflitTest1 - 2020.04.26 at 15h 17m 04s.xml">
+      <configuration name="CourseActivityTest.doesConflitTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseActivityTest_doesConflitTest1 - 2020.04.26 at 15h 17m 09s.xml">
+      <configuration name="CourseActivityTest.doesConflitTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseActivityTest_doesConflitTest1 - 2020.04.26 at 15h 19m 34s.xml">
+      <configuration name="CourseActivityTest.doesConflitTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UBCCourseActivityTest - 2020.05.01 at 11h 14m 59s.xml">
+      <configuration name="UBCCourseActivityTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UBCCourseActivityTest_getCourseTimesTest - 2020.05.01 at 11h 19m 21s.xml">
+      <configuration name="UBCCourseActivityTest.getCourseTimesTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UBCCourseActivityTest_getCourseTimesTest - 2020.05.01 at 11h 20m 58s.xml">
+      <configuration name="UBCCourseActivityTest.getCourseTimesTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UBCCourseActivityTest - 2020.05.01 at 11h 21m 06s.xml">
+      <configuration name="UBCCourseActivityTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_java_in_AgendaBuilder - 2020.05.01 at 11h 21m 13s.xml">
+      <configuration name="test.java in AgendaBuilder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimeInstanceTest - 2020.05.01 at 11h 39m 32s.xml">
+      <configuration name="TimeInstanceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimeInstanceTest - 2020.05.01 at 11h 41m 32s.xml">
+      <configuration name="TimeInstanceTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/activity/UBC_CourseActivity.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/activity/UBC_CourseActivity.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/activity/UBC_CourseActivity.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AgendaBuilder$TimeInstanceTest.ic" NAME="TimeInstanceTest Coverage Results" MODIFIED="1588358483508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.java.util_test.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>AgendaBuilder</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>junit:junit-dep:4.8.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc90284b-23c8-4a52-98ba-7b9c0eef5bf5" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/timetable/AgendaBuilder.java" afterDir="false" />
+=======
+>>>>>>> dcd0515784643939111b6990f2d2177e4b6bd141
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/CourseActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/CourseActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/UBC_CourseActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/UBC_CourseActivity.class" afterDir="false" />
@@ -401,6 +404,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587857124936</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00001" summary="fixing stuff">
       <created>1588365698780</created>
       <option name="number" value="00001" />
@@ -409,6 +413,23 @@
       <updated>1588365698780</updated>
     </task>
     <option name="localTasksCounter" value="2" />
+=======
+    <task id="LOCAL-00001" summary="implemented some methods for ActivityGraph">
+      <created>1588360864442</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588360864443</updated>
+    </task>
+    <task id="LOCAL-00002" summary="implemented some methods for ActivityGraph">
+      <created>1588366943841</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588366943841</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+>>>>>>> dcd0515784643939111b6990f2d2177e4b6bd141
     <servers />
   </component>
   <component name="TestHistory">
@@ -514,8 +535,13 @@
     </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
     <MESSAGE value="fixing stuff" />
     <option name="LAST_COMMIT_MESSAGE" value="fixing stuff" />
+=======
+    <MESSAGE value="implemented some methods for ActivityGraph" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented some methods for ActivityGraph" />
+>>>>>>> dcd0515784643939111b6990f2d2177e4b6bd141
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
