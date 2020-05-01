@@ -6,20 +6,68 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ActivityGraph{
+import java.util.*;
 
+public abstract class ActivityGraph implements IGraph{
 
-private Map<ActivityVertex, Integer> vertexMap;
-private Map<ActivityEdge, Integer> edgeMap;
-private List<List<Integer>> adjacencyMatrix;
+    private Map<ActivityVertex, Integer> vertexMap;
+    private Set<ActivityEdge> edgeSet;
 
+    private List<List<Integer>> adjacencyMatrix;
 
-    public ActivityGraph() {
+    public ActivityGraph(ActivityVertex v){
         vertexMap = new HashMap<>();
-        edgeMap = new HashMap<>();
+        edgeSet = new HashSet<>();
         adjacencyMatrix = new ArrayList<>();
     }
 
+    public boolean addVertex(ActivityVertex v){
+        if(!vertexMap.containsKey(v)) {
+            vertexMap.put(v, 0);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean vertexExists(ActivityVertex v){
+        if(vertexMap.containsKey(v))
+            return true;
+        return false;
+    }
+
+    public boolean addEdge(ActivityEdge e){
+        if(!edgeSet.contains(e)){
+            edgeSet.add(e);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean edgeExists(ActivityEdge e){
+        if(edgeSet.contains(e))
+            return false;
+        return true;
+    }
+
+    public boolean edgeExists(ActivityVertex v1, ActivityVertex v2){
+
+    }
+
+    public boolean remove(ActivityEdge e){
+        if(edgeSet.contains(e)) {
+            edgeSet.remove(e);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean remove(ActivityVertex v){
+        if(vertexMap.containsKey(v)){
+            vertexMap.remove(v);
+            return true;
+        }
+        return false;
+    }
 
 
 
