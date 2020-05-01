@@ -1,6 +1,5 @@
 package main.java.course_graph;
 
-import javax.swing.text.EditorKit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,31 +7,28 @@ import java.util.Map;
 
 import java.util.*;
 
-public abstract class ActivityGraph implements IGraph{
+public class ActivityGraph implements IGraph{
 
-    private Map<ActivityVertex, Integer> vertexMap;
+    private Map<ActivityVertex, Integer> vertexMap; //vertices/degree map
     private Set<ActivityEdge> edgeSet;
-
-    private List<List<Integer>> adjacencyMatrix;
+    private Map<ActivityVertex, List<ActivityVertex>> adjacencyList;
 
     public ActivityGraph(ActivityVertex v){
         vertexMap = new HashMap<>();
         edgeSet = new HashSet<>();
-        adjacencyMatrix = new ArrayList<>();
+        adjacencyList = new HashMap<>();
     }
 
     public boolean addVertex(ActivityVertex v){
         if(!vertexMap.containsKey(v)) {
             vertexMap.put(v, 0);
-            return true;
+            adjacencyList.put(v, new ArrayList<>());
         }
-        return false;
+        return true;
     }
 
     public boolean vertexExists(ActivityVertex v){
-        if(vertexMap.containsKey(v))
-            return true;
-        return false;
+        return vertexMap.containsKey(v);
     }
 
     public boolean addEdge(ActivityEdge e){
@@ -50,6 +46,7 @@ public abstract class ActivityGraph implements IGraph{
     }
 
     public boolean edgeExists(ActivityVertex v1, ActivityVertex v2){
+
 
     }
 
