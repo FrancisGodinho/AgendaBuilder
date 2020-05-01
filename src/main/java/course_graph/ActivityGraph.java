@@ -120,8 +120,8 @@ public class ActivityGraph implements IGraph{
      *
      * @return a set of all vertices in the graph
      */
-    Set<ActivityVertex> allVertices();{
-
+    public Set<ActivityVertex> allVertices(){
+        return new HashSet<>();
     }
 
     /**
@@ -131,8 +131,8 @@ public class ActivityGraph implements IGraph{
      * @param v the vertex of interest
      * @return all edges incident on v
      */
-    Set<ActivityEdge> incidentEdges(ActivityVertex v){
-
+    public Set<ActivityEdge> incidentEdges(ActivityVertex v){
+        return new HashSet<>();
     }
 
     /**
@@ -142,8 +142,8 @@ public class ActivityGraph implements IGraph{
      * @param v the vertex of interest
      * @return all vertices adjacent on v
      */
-    Set<ActivityVertex> adjacentVertices(ActivityVertex v){
-
+    public Set<ActivityVertex> adjacentVertices(ActivityVertex v){
+        return new HashSet<>();
     }
 
     /**
@@ -152,8 +152,8 @@ public class ActivityGraph implements IGraph{
      *
      * @return all edges in the graph
      */
-    Set<ActivityEdge> allEdges(){
-
+    public Set<ActivityEdge> allEdges(){
+        return new HashSet<>();
     }
 
     /**
@@ -163,7 +163,7 @@ public class ActivityGraph implements IGraph{
      * @param v is the vertex whose neighbourhood we want.
      * @return a map containing each vertex w that neighbors v and the edge between v and w.
      */
-    Map<ActivityVertex, ActivityEdge> getNeighbours(ActivityVertex v){
-
+    public Map<ActivityVertex, ActivityEdge> getNeighbours(ActivityVertex v){
+        return new HashMap<>();
     }
 }
