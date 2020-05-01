@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Course {
 
-    private List<CourseActivity> activityList;
+    private List<UBC_CourseActivity> activityList;
 
     /**
      * Create new Course
@@ -18,9 +18,9 @@ public class Course {
      * Create new Course
      * @param courses a list of course activities
      */
-    public Course(List<CourseActivity> courses){
+    public Course(List<UBC_CourseActivity> courses){
         activityList = new ArrayList<>();
-        for(CourseActivity activity : courses)
+        for(UBC_CourseActivity activity : courses)
             activityList.add(activity);
     }
 
@@ -28,9 +28,9 @@ public class Course {
      * Create a new Course
      * @param courses course activities
      */
-    public Course(CourseActivity... courses){
+    public Course(UBC_CourseActivity... courses){
         activityList = new ArrayList<>();
-        for(CourseActivity activity : courses)
+        for(UBC_CourseActivity activity : courses)
             activityList.add(activity);
     }
 
@@ -39,7 +39,7 @@ public class Course {
      * @param activity the activity to add
      * @return true if the activity was added successfully, false otherwise
      */
-    public boolean addActivity(CourseActivity activity){
+    public boolean addActivity(UBC_CourseActivity activity){
         return activityList.add(activity);
     }
 
@@ -56,7 +56,7 @@ public class Course {
      * @param activity the activity to check
      * @return true if the activity is part of the course, false otherwise
      */
-    public boolean hasActivity(CourseActivity activity){
+    public boolean hasActivity(UBC_CourseActivity activity){
         return activityList.contains(activity);
     }
 

@@ -1,6 +1,6 @@
 package main.java.timetable;
 
-import main.java.activity.CourseActivity;
+import main.java.activity.UBC_CourseActivity;
 import main.java.util.Duration;
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class TimeTable {
 
-    private List<CourseActivity> activityList;
+    private List<UBC_CourseActivity> activityList;
 
     public TimeTable(){
         activityList = new ArrayList<>();
@@ -20,7 +20,7 @@ public class TimeTable {
      * @return true if the activity does not conflict and is added
      *          successfully, false otherwise.
      */
-    public boolean addActivity(CourseActivity activity){
+    public boolean addActivity(UBC_CourseActivity activity){
         if(activity == null)
             throw new IllegalArgumentException("Activity cannot be null");
         return activityList.add(activity);
@@ -31,7 +31,7 @@ public class TimeTable {
      * @param activity the activity to be removed
      * @return true if the activity is removed successfully, false otherwise
      */
-    public boolean removeActivity(CourseActivity activity){
+    public boolean removeActivity(UBC_CourseActivity activity){
         return activityList.remove(activity);
     }
 
@@ -40,10 +40,10 @@ public class TimeTable {
      * @param activity the activity to check
      * @return true if the activity conflicts, false otherwise
      */
-    public boolean doesConflict(CourseActivity activity){
+    public boolean doesConflict(UBC_CourseActivity activity){
         List<Duration> testDurs = activity.getCourseTimes();
 
-        for(CourseActivity currAct : activityList){
+        for(UBC_CourseActivity currAct : activityList){
             List<Duration> currDurs = currAct.getCourseTimes();
 
             for(Duration testDur : testDurs)
@@ -71,9 +71,9 @@ public class TimeTable {
      * Produces a list of all courses that are part of this time table
      * @return a list of all courses
      */
-    public List<CourseActivity> allCourses(){
-        List<CourseActivity> retList = new ArrayList<>();
-        for(CourseActivity act : activityList)
+    public List<UBC_CourseActivity> allCourses(){
+        List<UBC_CourseActivity> retList = new ArrayList<>();
+        for(UBC_CourseActivity act : activityList)
             retList.add(act);
         return retList;
     }

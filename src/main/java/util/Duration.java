@@ -1,6 +1,6 @@
 package main.java.util;
 
-public class Duration {
+public class Duration{
 
 
     TimeInstance timeInstance1, timeInstance2;
@@ -8,7 +8,7 @@ public class Duration {
     public Duration(TimeInstance timeInstance1, TimeInstance timeInstance2){
         if(timeInstance1.equals(timeInstance2))
             throw new IllegalArgumentException("Cannot have duration of zero");
-        if(timeInstance2.isAfter(timeInstance1))
+        if(timeInstance1.isAfter(timeInstance2))
             throw new IllegalArgumentException("The first time cannot be after the second time");
 
         this.timeInstance1 = timeInstance1;

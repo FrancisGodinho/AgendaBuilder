@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TimeInstance {
+public class TimeInstance{
 
     private Day day;
     private int hour, min;

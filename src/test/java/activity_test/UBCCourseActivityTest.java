@@ -1,7 +1,7 @@
 package test.java.activity_test;
 
-import main.java.activity.CourseActivity;
-import main.java.activity.CourseSection;
+import main.java.activity.UBC_CourseActivity;
+import main.java.activity.UBC_CourseSection;
 import main.java.util.Day;
 import main.java.util.Duration;
 import main.java.util.TimeInstance;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CourseActivityTest {
+public class UBCCourseActivityTest {
 
     @Test
     public void getCourseTimesTest(){
@@ -25,9 +25,9 @@ public class CourseActivityTest {
         Duration dur1 = new Duration(start1, end1);
         Duration dur2 = new Duration(start2, end2);
 
-        CourseSection section = new CourseSection(001);
+        UBC_CourseSection section = new UBC_CourseSection(001, null, null, null);
         List<Duration> expectedList = new ArrayList<>(Arrays.asList(dur1, dur2));
-        CourseActivity activity = new CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
+        UBC_CourseActivity activity = new UBC_CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
 
         List<Duration> resultList = activity.getCourseTimes();
 
@@ -44,8 +44,8 @@ public class CourseActivityTest {
         TimeInstance start2 = new TimeInstance(Day.WED, 12, 00);
         TimeInstance end2 = new TimeInstance(Day.WED, 14, 00);
 
-        CourseSection section = new CourseSection(001);
-        CourseActivity activity1 = new CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
+        UBC_CourseSection section = new UBC_CourseSection(001, null, null, null);
+        UBC_CourseActivity activity1 = new UBC_CourseActivity("ELEC", 201, section, start1, end1, start2, end2);
 
         //second activity
         start1 = new TimeInstance(Day.MON, 13, 00);
@@ -53,8 +53,8 @@ public class CourseActivityTest {
         start2 = new TimeInstance(Day.WED, 13, 00);
         end2 = new TimeInstance(Day.WED, 15, 00);
 
-        section = new CourseSection(001);
-        CourseActivity activity2 = new CourseActivity("MATH", 253, section, start1, end1, start2, end2);
+        section = new UBC_CourseSection(002, null, null, null);
+        UBC_CourseActivity activity2 = new UBC_CourseActivity("MATH", 253, section, start1, end1, start2, end2);
 
         //third activity
         start1 = new TimeInstance(Day.MON, 16, 00);
@@ -62,8 +62,8 @@ public class CourseActivityTest {
         start2 = new TimeInstance(Day.WED, 12, 30);
         end2 = new TimeInstance(Day.WED, 13, 00);
 
-        section = new CourseSection(001);
-        CourseActivity activity3 = new CourseActivity("MATH", 307, section, start1, end1, start2, end2);
+        section = new UBC_CourseSection(8, null, null, null);
+        UBC_CourseActivity activity3 = new UBC_CourseActivity("MATH", 307, section, start1, end1, start2, end2);
 
         //fourth activity
         start1 = new TimeInstance(Day.WED, 9, 00);
@@ -71,8 +71,8 @@ public class CourseActivityTest {
         start2 = new TimeInstance(Day.FRI, 12, 00);
         end2 = new TimeInstance(Day.FRI, 13, 00);
 
-        section = new CourseSection(001);
-        CourseActivity activity4 = new CourseActivity("CPSC", 261, section, start1, end1, start2, end2);
+        section = new UBC_CourseSection(006, null, null, null);
+        UBC_CourseActivity activity4 = new UBC_CourseActivity("CPSC", 261, section, start1, end1, start2, end2);
 
         Assert.assertTrue(activity1.doesConflict(activity2));
         Assert.assertTrue(activity1.doesConflict(activity3));
