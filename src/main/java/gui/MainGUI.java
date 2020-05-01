@@ -1,14 +1,12 @@
 package main.java.gui;
 
 
-import main.java.timetable.AgendaBuilder;
-
 import javax.swing.*;
 import java.awt.*;
 
-public class GUI extends JFrame{
+public class MainGUI extends JFrame{
 
-    public GUI(){
+    public MainGUI(){
         super("AgendaBuilder");
         setLayout(new FlowLayout());
 
@@ -20,14 +18,9 @@ public class GUI extends JFrame{
 
     public static void main(String[] args){
 
-        GUI gui = new GUI();
+        MainGUI gui = new MainGUI();
         gui.setSize(1024, 768);
         gui.setVisible(true);
-
-
-
-
-
     }
 
 
