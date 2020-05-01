@@ -55,11 +55,11 @@ public class ActivityGraph implements IGraph{
         if(edgeSet.contains(e)){
             return true;
         }
-        edgeSet.add(e);
         if(!vertexExists(e.v1()) || !vertexExists(e.v2()))
             return false;
         adjacencyList .get(e.v1()) .add(e.v2());
         adjacencyList .get(e.v2()) .add(e.v1());
+        edgeSet.add(e);
         return true;
     }
 
@@ -94,9 +94,11 @@ public class ActivityGraph implements IGraph{
     public boolean remove(ActivityEdge e){
         if(edgeSet.contains(e)) {
             edgeSet.remove(e);
+            adjacencyList.get(e.v1()).remove(e.v2());
+            adjacencyList.get(e.v2()).remove(e.v1());
             return true;
         }
-        return false;
+        return true;
     }
 
     /**
@@ -107,10 +109,13 @@ public class ActivityGraph implements IGraph{
      */
     public boolean remove(ActivityVertex v){
         if(vertexMap.containsKey(v)){
+            for(int i = 0; i < adjacencyList.get(v).size(); i ++){
+                adjacencyList.get(adjacencyList.get(v).get(i)).remove(v);
+            }
+            adjacencyList.remove(v);
             vertexMap.remove(v);
-            return true;
         }
-        return false;
+        return true;
     }
 
     /**
