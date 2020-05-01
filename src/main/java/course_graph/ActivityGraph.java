@@ -52,11 +52,14 @@ public class ActivityGraph implements IGraph{
      * @return true if the edge was successfully added and false otherwise
      */
     public boolean addEdge(ActivityEdge e){
-        if(!edgeSet.contains(e)){
-            edgeSet.add(e);
-            adjacencyList.get(e.v1()).add(e.v2());
-            adjacencyList.get(e.v2()).add(e.v1());
+        if(edgeSet.contains(e)){
+            return true;
         }
+        edgeSet.add(e);
+        if(!vertexExists(e.v1()) || !vertexExists(e.v2()))
+            return false;
+        adjacencyList .get(e.v1()) .add(e.v2());
+        adjacencyList .get(e.v2()) .add(e.v1());
         return true;
     }
 
@@ -162,6 +165,4 @@ public class ActivityGraph implements IGraph{
     Map<ActivityVertex, ActivityEdge> getNeighbours(ActivityVertex v){
 
     }
-
-
 }

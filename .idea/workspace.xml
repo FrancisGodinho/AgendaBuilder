@@ -3,27 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fc90284b-23c8-4a52-98ba-7b9c0eef5bf5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/META-INF/AgendaBuilder.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/Course.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/CourseActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/CourseActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/CourseSection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/CourseSection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/UBC_CourseActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/UBC_CourseActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/UBC_CourseSection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/activity/UBC_CourseSection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/course_graph/ActivityEdge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/course_graph/ActivityGraph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/course_graph/ActivityVertex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/course_graph/IGraph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/gui/GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/timetable/TimeTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/util/Day.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/util/Day.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/util/Duration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/util/Duration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/util/TimeInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/main/java/util/TimeInstance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/test/java/activity_test/UBCCourseActivityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/test/java/timetable_test/TimeTableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AgendaBuilder/test/java/timetable_test/TimeTableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/test/java/util_test/DurationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgendaBuilder/test/java/util_test/TimeInstanceTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/course_graph/ActivityGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/course_graph/ActivityGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/course_graph/ActivityVertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/course_graph/ActivityVertex.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588360864443</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implemented some methods for ActivityGraph">
+      <created>1588366943841</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588366943841</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
