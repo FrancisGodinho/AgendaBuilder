@@ -7,7 +7,7 @@ import java.util.Map;
 
 import java.util.*;
 
-public class ActivityGraph implements IGraph{
+public class ActivityGraph{
 
     private Map<ActivityVertex, Integer> vertexMap; //vertices/degree map
     private Set<ActivityEdge> edgeSet;
@@ -46,7 +46,7 @@ public class ActivityGraph implements IGraph{
     }
 
     public boolean edgeExists(ActivityVertex v1, ActivityVertex v2){
-
+return false;
 
     }
 
