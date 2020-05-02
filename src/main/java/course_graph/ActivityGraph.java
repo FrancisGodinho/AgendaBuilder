@@ -94,9 +94,9 @@ public class ActivityGraph implements IGraph{
      */
     public boolean remove(ActivityEdge e){
         if(edgeSet.contains(e)) {
-            edgeSet.remove(e);
             adjacencyList.get(e.v1()).remove(e.v2());
             adjacencyList.get(e.v2()).remove(e.v1());
+            edgeSet.remove(e);
             return true;
         }
         return true;
@@ -126,17 +126,20 @@ public class ActivityGraph implements IGraph{
      * @return a set of all vertices in the graph
      */
     public Set<ActivityVertex> allVertices(){
-        return new HashSet<>();
+        return vertexMap.keySet();
     }
 
     /**
-     * Obtain a set of all edgees incident on v.
+     * Obtain a set of all edges incident on v.
      * Access to this set **should not** permit graph mutations.
      *
      * @param v the vertex of interest
      * @return all edges incident on v
      */
     public Set<ActivityEdge> incidentEdges(ActivityVertex v){
+        for(int i = 0; i < vertexMap.get(v); i ++){
+            //not complete
+        }
         return new HashSet<>();
     }
 
@@ -148,7 +151,11 @@ public class ActivityGraph implements IGraph{
      * @return all vertices adjacent on v
      */
     public Set<ActivityVertex> adjacentVertices(ActivityVertex v){
-        return new HashSet<>();
+        Set<ActivityVertex> incVertices = new HashSet<>();
+        for(int i = 0; i < adjacencyList.get(v).size(); i ++){
+            incVertices.add(adjacencyList.get(v).get(i));
+        }
+        return incVertices;
     }
 
     /**
@@ -158,7 +165,7 @@ public class ActivityGraph implements IGraph{
      * @return all edges in the graph
      */
     public Set<ActivityEdge> allEdges(){
-        return new HashSet<>();
+        return edgeSet;
     }
 
     /**
@@ -169,6 +176,12 @@ public class ActivityGraph implements IGraph{
      * @return a map containing each vertex w that neighbors v and the edge between v and w.
      */
     public Map<ActivityVertex, ActivityEdge> getNeighbours(ActivityVertex v){
+        Map<ActivityVertex, ActivityEdge> vertexEdge = new HashMap<>();
+        //ActivityEdge e = new ActivityEdge(e.v1, e.v2);
+        for(int i = 0; i < adjacencyList.get(v).size(); i ++){
+            ActivityEdge e = new ActivityEdge(e.v, e.(adjacencyList.get(v).get(i)));
+            vertexEdge.put(v, e);
+        }
         return new HashMap<>();
     }
 }

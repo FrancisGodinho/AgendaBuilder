@@ -6,15 +6,7 @@ public class ActivityVertex {
 
     private final UBC_CourseActivity activity;
     private int color;
-/*    private int id;
 
-    public getId(int id){
-
-    }
-
-    public setId(int id){
-
-    }*/
 
     /**
      * Create a new ActivityVertex
