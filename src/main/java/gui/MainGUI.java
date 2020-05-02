@@ -1,6 +1,11 @@
 package main.java.gui;
 
 
+import com.mindfusion.scheduling.Calendar;
+import com.mindfusion.scheduling.CalendarView;
+import com.mindfusion.scheduling.ThemeType;
+import com.mindfusion.scheduling.awt.AwtCalendar;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,36 +25,42 @@ public class MainGUI extends JFrame{
     private JCheckBox checkBox;
     private Choice choiceBox;
 
+    private AwtCalendar calendar;
+
 
 
     public MainGUI(){
         super("AgendaBuilder");
-        setLayout(new FlowLayout());
+
+
+        Container container = this.getContentPane();
+        SpringLayout springLayout = new SpringLayout();
+        container.setLayout(springLayout);
 
         item = new JLabel("This is a test");
         item.setToolTipText("This is gonna show up on hover");
-        add(item);
+        container.add(item);
 
         item1 = new JTextField(10);
-        add(item1);
+        container.add(item1);
 
         item2 = new JTextField("Enter text here");
-        add(item2);
+        container.add(item2);
 
         item3 = new JTextField("uneditabel", 20);
         item3.setEditable(false);
-        add(item3);
+        container.add(item3);
 
         passwordField = new JPasswordField("mypass");
-        add(passwordField);
+        container.add(passwordField);
 
         checkBox = new JCheckBox("Check if youre cool");
-        add(checkBox);
+        container.add(checkBox);
 
         choiceBox = new Choice();
         choiceBox.add("Cpen 311");
         choiceBox.add("Cpen 211");
-        add(choiceBox);
+        container.add(choiceBox);
 
         Handler handler = new Handler();
         ItemListener itemListener = new ItemListener() {
@@ -70,6 +81,24 @@ public class MainGUI extends JFrame{
         passwordField.addActionListener(handler);
         checkBox.addActionListener(handler);
         choiceBox.addItemListener(itemListener);
+
+        springLayout.putConstraint(SpringLayout.SOUTH, item, -5, SpringLayout.SOUTH, container);
+        springLayout.putConstraint(SpringLayout.WEST, item, 5, SpringLayout.EAST, item);
+
+        springLayout.putConstraint(SpringLayout.SOUTH, item1, -5, SpringLayout.SOUTH, container);
+        springLayout.putConstraint(SpringLayout.WEST, item1, 5, SpringLayout.EAST, item1);
+
+        springLayout.putConstraint(SpringLayout.SOUTH, item2, -5, SpringLayout.SOUTH, container);
+        springLayout.putConstraint(SpringLayout.WEST, item2, 5, SpringLayout.EAST, item2);
+
+
+        calendar = new AwtCalendar();
+        calendar.beginInit();
+        calendar.setCurrentView(CalendarView.Timetable);
+        calendar.setTheme(ThemeType.Light);
+        calendar.endInit();
+
+        container.add(calendar);
 
 
 

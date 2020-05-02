@@ -1,5 +1,6 @@
 package main.java.course_graph;
 
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -137,10 +138,13 @@ public class ActivityGraph implements IGraph{
      * @return all edges incident on v
      */
     public Set<ActivityEdge> incidentEdges(ActivityVertex v){
-        for(int i = 0; i < vertexMap.get(v); i ++){
-            //not complete
-        }
-        return new HashSet<>();
+        List<ActivityVertex> neighbourList = adjacencyList.get(v);
+        Set<ActivityEdge> returnSet = new HashSet<>();
+
+        for(ActivityVertex neighbour : neighbourList)
+            returnSet.add(new ActivityEdge(v, neighbour));
+
+        return returnSet;
     }
 
     /**
@@ -165,7 +169,7 @@ public class ActivityGraph implements IGraph{
      * @return all edges in the graph
      */
     public Set<ActivityEdge> allEdges(){
-        return edgeSet;
+        return new HashSet<>(edgeSet);
     }
 
     /**
@@ -179,8 +183,8 @@ public class ActivityGraph implements IGraph{
         Map<ActivityVertex, ActivityEdge> vertexEdge = new HashMap<>();
         //ActivityEdge e = new ActivityEdge(e.v1, e.v2);
         for(int i = 0; i < adjacencyList.get(v).size(); i ++){
-            ActivityEdge e = new ActivityEdge(e.v, e.(adjacencyList.get(v).get(i)));
-            vertexEdge.put(v, e);
+
+
         }
         return new HashMap<>();
     }
