@@ -63,7 +63,7 @@ public class ActivityGraph implements IGraph{
         edgeSet.add(e);
         return true;
     }
-    
+
     /**
      * Check if an edge is part of the graph
      *
@@ -168,7 +168,7 @@ public class ActivityGraph implements IGraph{
      * @return all edges in the graph
      */
     public Set<ActivityEdge> allEdges(){
-        return edgeSet;
+        return new HashSet<>(edgeSet);
     }
 
     /**
