@@ -63,7 +63,7 @@ public class ActivityGraph implements IGraph{
         edgeSet.add(e);
         return true;
     }
-
+    
     /**
      * Check if an edge is part of the graph
      *
@@ -137,10 +137,12 @@ public class ActivityGraph implements IGraph{
      * @return all edges incident on v
      */
     public Set<ActivityEdge> incidentEdges(ActivityVertex v){
-        for(int i = 0; i < vertexMap.get(v); i ++){
-            //not complete
+        Set<ActivityEdge> returnSet = new HashSet<>();
+
+        for(int i = 0; i < adjacencyList.get(v).size(); i ++){
+            returnSet.add(new ActivityEdge( v, adjacencyList.get(v).get(i)));
         }
-        return new HashSet<>();
+        return returnSet;
     }
 
     /**
@@ -152,6 +154,7 @@ public class ActivityGraph implements IGraph{
      */
     public Set<ActivityVertex> adjacentVertices(ActivityVertex v){
         Set<ActivityVertex> incVertices = new HashSet<>();
+
         for(int i = 0; i < adjacencyList.get(v).size(); i ++){
             incVertices.add(adjacencyList.get(v).get(i));
         }
@@ -177,11 +180,10 @@ public class ActivityGraph implements IGraph{
      */
     public Map<ActivityVertex, ActivityEdge> getNeighbours(ActivityVertex v){
         Map<ActivityVertex, ActivityEdge> vertexEdge = new HashMap<>();
-        //ActivityEdge e = new ActivityEdge(e.v1, e.v2);
+
         for(int i = 0; i < adjacencyList.get(v).size(); i ++){
-            ActivityEdge e = new ActivityEdge(e.v, e.(adjacencyList.get(v).get(i)));
-            vertexEdge.put(v, e);
+            vertexEdge.put(adjacencyList.get(v).get(i), new ActivityEdge(v, adjacencyList.get(v).get(i)));
         }
-        return new HashMap<>();
+        return vertexEdge;
     }
 }
