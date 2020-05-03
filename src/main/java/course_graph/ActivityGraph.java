@@ -113,6 +113,7 @@ public class ActivityGraph implements IGraph{
         if(vertexMap.containsKey(v)){
             for(int i = 0; i < adjacencyList.get(v).size(); i ++){
                 adjacencyList.get(adjacencyList.get(v).get(i)).remove(v);
+                edgeSet.remove(new ActivityEdge(v, adjacencyList.get(v).get(i)));
             }
             adjacencyList.remove(v);
             vertexMap.remove(v);
