@@ -62,20 +62,28 @@ public class ActivityGraphTest {
         testGraph.addEdge(new ActivityEdge(vertex1, vertex4));
         testGraph.addEdge(new ActivityEdge(vertex3, vertex4));
 
-        //check that the vertices were added works
+        //testing vertexExists
         Assert.assertTrue(testGraph.vertexExists(vertex1));
         Assert.assertTrue(testGraph.vertexExists(vertex2));
         Assert.assertTrue(testGraph.vertexExists(vertex3));
         Assert.assertTrue(testGraph.vertexExists(vertex4));
 
-        //check that the edges were added
+        //testing edgeExits
         Assert.assertTrue(testGraph.edgeExists(new ActivityEdge(vertex1, vertex3)));
         Assert.assertTrue(testGraph.edgeExists(new ActivityEdge(vertex1, vertex4)));
         Assert.assertTrue(testGraph.edgeExists(new ActivityEdge(vertex4, vertex3)));
 
-
         Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex1, vertex2)));
         Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex2, vertex3)));
         Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex2, vertex4)));
+
+        //testing edgeExits with vertex input
+        Assert.assertTrue(testGraph.edgeExists(vertex1, vertex3));
+        Assert.assertTrue(testGraph.edgeExists(vertex1, vertex4));
+        Assert.assertTrue(testGraph.edgeExists(vertex4, vertex3));
+
+        Assert.assertFalse(testGraph.edgeExists(vertex1, vertex2));
+        Assert.assertFalse(testGraph.edgeExists(vertex2, vertex3));
+        Assert.assertFalse(testGraph.edgeExists(vertex2, vertex4));
     }
 }
