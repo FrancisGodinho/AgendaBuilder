@@ -33,6 +33,6 @@ public class CourseSection {
 
     @Override
     public int hashCode() {
-        return lecture ^ (lecture >>> 32);
+        return lecture * lecture;
     }
 }

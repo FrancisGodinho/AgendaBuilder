@@ -52,8 +52,7 @@ public class ActivityVertex {
 
     @Override
     public int hashCode(){
-        int result = color ^ (color >>> 32);
-        result = 31 * result + activity.hashCode() ^ (activity.hashCode() >>> 32);
+        int result = color + activity.hashCode();
         return result;
     }
 

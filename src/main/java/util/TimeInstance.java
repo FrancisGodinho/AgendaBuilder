@@ -86,9 +86,7 @@ public class TimeInstance{
 
     @Override
     public int hashCode() {
-        int result = min ^ (min >>> 32);
-        result = 31 * result + hour ^ (hour >>> 32);
-        result = 31 * result + day.hashCode() ^ (day.hashCode() >>> 32);
+        int result = min + hour + day.hashCode();
         return result;
     }
 }

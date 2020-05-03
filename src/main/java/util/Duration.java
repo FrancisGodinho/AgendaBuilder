@@ -51,8 +51,7 @@ public class Duration{
 
     @Override
     public int hashCode(){
-        int result = timeInstance1.hashCode() ^ (timeInstance1.hashCode() >>> 32);
-        result = 31 * result + timeInstance2.hashCode() ^ (timeInstance2.hashCode() >>> 32);
+        int result = timeInstance1.hashCode() + timeInstance2.hashCode();
         return result;
     }
 

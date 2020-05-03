@@ -71,10 +71,7 @@ public class UBC_CourseSection extends CourseSection{
 
     @Override
     public int hashCode() {
-        int result = this.getLecture() ^ (this.getLecture() >>> 32);
-        result = 31 * result + lab.hashCode() ^ (lab.hashCode() >>> 32);
-        result = 31 * result + tutorial.hashCode() ^ (tutorial.hashCode() >>> 32);
-        result = 31 * result + discussion.hashCode() ^ (discussion.hashCode() >>> 32);
+        int result = this.getLecture() * this.getLecture() + lab.hashCode() * lab.hashCode() + tutorial.hashCode() * tutorial.hashCode() + discussion.hashCode() * discussion.hashCode();
         return result;
     }
 }
