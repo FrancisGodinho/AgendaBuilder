@@ -11,12 +11,12 @@ import java.util.*;
 public class ActivityGraph implements IGraph{
 
 
-    private Map<ActivityVertex, Integer> vertexMap; //vertices/degree map
+    private Map<ActivityVertex, Integer> vertexMap; //vertices,degree map
     private Set<ActivityEdge> edgeSet;
     private Map<ActivityVertex,List<ActivityVertex>> adjacencyList;
 
 
-    public ActivityGraph(ActivityVertex v){
+    public ActivityGraph(){
         vertexMap = new HashMap<>();
         edgeSet = new HashSet<>();
         adjacencyList = new HashMap<>();
