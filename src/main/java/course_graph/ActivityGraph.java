@@ -99,7 +99,6 @@ public class ActivityGraph implements IGraph{
             adjacencyList.get(e.v1()).remove(e.v2());
             adjacencyList.get(e.v2()).remove(e.v1());
             edgeSet.remove(e);
-            return true;
         }
         return true;
     }
