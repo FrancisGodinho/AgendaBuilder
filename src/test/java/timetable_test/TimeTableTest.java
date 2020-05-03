@@ -12,7 +12,7 @@ public class TimeTableTest {
     }
 
     @Test
-    public void conflitTest(){
+    public void conflictTest(){
 
     }
 }
