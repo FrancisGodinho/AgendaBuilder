@@ -50,9 +50,7 @@ public class ActivityEdge {
 
     @Override
     public int hashCode(){
-        int result = v1.hashCode() ^ (v1.hashCode() >>> 32);
-        result = 31 * result + v2.hashCode() ^ (v2.hashCode() >>> 32);
-        return result;
+        return v1.hashCode() + v2.hashCode();
     }
 
     /**
