@@ -42,7 +42,8 @@ public class ActivityEdge {
     public boolean equals(Object o){
         if(o instanceof ActivityEdge){
             ActivityEdge that = (ActivityEdge) o;
-            return that.v1.equals(this.v1) && that.v2.equals(this.v2);
+            return (that.v1.equals(this.v1) && that.v2.equals(this.v2)) ||
+                    (that.v1.equals(this.v2) && that.v1.equals(this.v2));
         }
         return false;
     }
