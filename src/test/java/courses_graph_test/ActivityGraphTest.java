@@ -122,11 +122,6 @@ public class ActivityGraphTest {
         ActivityVertex vertex3 = new ActivityVertex(course3);
         ActivityVertex vertex4 = new ActivityVertex(course4);
 
-        //add some edges to graph
-        testGraph.addEdge(new ActivityEdge(vertex1, vertex3));
-        testGraph.addEdge(new ActivityEdge(vertex1, vertex4));
-        testGraph.addEdge(new ActivityEdge(vertex4, vertex3));
-
         //add vertex to graph
         testGraph.addVertex(vertex1);
         testGraph.addVertex(vertex2);
@@ -144,15 +139,24 @@ public class ActivityGraphTest {
         Assert.assertFalse(testGraph.vertexExists(vertex3));
         Assert.assertTrue(testGraph.vertexExists(vertex4));
 
+        //add vertices back
+        testGraph.addVertex(vertex1);
+        testGraph.addVertex(vertex2);
+        testGraph.addVertex(vertex3);
+
+        //add some edges to graph
+        testGraph.addEdge(new ActivityEdge(vertex1, vertex3));
+        testGraph.addEdge(new ActivityEdge(vertex1, vertex4));
+        testGraph.addEdge(new ActivityEdge(vertex4, vertex3));
+
         //testing remove edge
         Assert.assertTrue(testGraph.remove(new ActivityEdge(vertex1, vertex3)));
         Assert.assertTrue(testGraph.remove(new ActivityEdge(vertex1, vertex4)));
-        Assert.assertTrue(testGraph.remove(new ActivityEdge(vertex4, vertex3)));
 
         //testing edgeExits
         Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex1, vertex3)));
         Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex1, vertex4)));
-      /*  Assert.assertTrue(testGraph.edgeExists(new ActivityEdge(vertex4, vertex3)));*/ //this one does not pass
+        Assert.assertTrue(testGraph.edgeExists(new ActivityEdge(vertex4, vertex3)));
     }
 
     @Test
@@ -222,11 +226,12 @@ public class ActivityGraphTest {
         assertEquals(outputEdgeSet, testGraph.allEdges());
 
         //there is something wrong with remove edge
-/*        //remove an edge
+        //remove an edge
         testGraph.remove(new ActivityEdge(vertex4, vertex3));
 
         //test allEdges
-        assertNotSame(expectedEdgeSet, testGraph.allEdges());*/
+        //assertEquals(outputEdgeSet, testGraph.allEdges());
+        Assert.assertFalse(outputEdgeSet.equals(testGraph.allEdges()));
     }
 
     @Test
@@ -299,7 +304,7 @@ public class ActivityGraphTest {
         outputVertexSet.add(vertex1);
 
         //test adjacentVertices
-        assertNotSame(outputVertexSet, testGraph.adjacentVertices(vertex1));
+        Assert.assertFalse(outputVertexSet.equals(testGraph.adjacentVertices(vertex1)));
     }
 
     @Test
@@ -357,6 +362,6 @@ public class ActivityGraphTest {
         outputNeighbourMap.remove(vertex4, new ActivityEdge(vertex4, vertex1));
 
         //testing getNeighbours
-        assertNotSame(outputNeighbourMap, testGraph.getNeighbours(vertex1));
+        Assert.assertFalse(outputNeighbourMap.equals(testGraph.getNeighbours(vertex1)));
     }
 }
