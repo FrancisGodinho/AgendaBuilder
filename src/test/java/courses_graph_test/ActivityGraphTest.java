@@ -85,6 +85,6 @@ public class ActivityGraphTest {
         Assert.assertFalse(testGraph.edgeExists(vertex1, vertex2));
         Assert.assertFalse(testGraph.edgeExists(vertex2, vertex3));
         Assert.assertFalse(testGraph.edgeExists(vertex2, vertex4));
-        
+
     }
 }
