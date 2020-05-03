@@ -54,6 +54,7 @@ public class ActivityVertex {
     public int hashCode(){
         int result = color ^ (color >>> 32);
         result = 31 * result + activity.hashCode() ^ (activity.hashCode() >>> 32);
+        result += activity.hashCode();
         return result;
     }
 

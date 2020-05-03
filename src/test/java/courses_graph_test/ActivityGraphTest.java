@@ -74,11 +74,8 @@ public class ActivityGraphTest {
         Assert.assertTrue(testGraph.edgeExists(new ActivityEdge(vertex4, vertex3)));
 
 
-        //check that these edges are not in the graph
-
-        //TODO: Try un-commenting this
-//        Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex1, vertex2)));
-//        Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex2, vertex3)));
-//        Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex2, vertex4)));
+        Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex1, vertex2)));
+        Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex2, vertex3)));
+        Assert.assertFalse(testGraph.edgeExists(new ActivityEdge(vertex2, vertex4)));
     }
 }

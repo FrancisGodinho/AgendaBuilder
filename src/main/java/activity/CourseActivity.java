@@ -113,7 +113,7 @@ public class CourseActivity {
 
     @Override
     public int hashCode() {
-        int result = courseNum ^ (courseNum >>> 32);
+        int result = courseNum + (courseNum >>> 32);
         result = 31 * result + courseName.hashCode() ^ (courseName.hashCode() >>> 32);
         result = 31 * result + courseSection.hashCode() ^ (courseSection.hashCode() >>> 32);
         result = 31 * result + courseTimes.hashCode() ^ (courseTimes.hashCode() >>> 32);
