@@ -131,7 +131,7 @@ public class AgendaBuilder {
 
 
     public static void main(String[] args) throws IOException {
-        
+
 
         AgendaBuilder ab = new AgendaBuilder();
         ab.addVertces();
