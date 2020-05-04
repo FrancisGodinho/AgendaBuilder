@@ -131,28 +131,7 @@ public class AgendaBuilder {
 
 
     public static void main(String[] args) throws IOException {
-
-        /*ExcelReader reader = new ExcelReader("E:\\Desktop\\Summer Coding Projects\\AgendaBuilder\\course_data\\course_data.xlsx");
-        XSSFSheet sheet = reader.getData();
-
-        // we iterate on rows
-        Iterator<Row> rowIt = sheet.iterator();
-
-        while(rowIt.hasNext()) {
-            Row row = rowIt.next();
-
-            // iterate on cells for the current row
-            Iterator<Cell> cellIterator = row.cellIterator();
-
-            while (cellIterator.hasNext()) {
-                Cell cell = cellIterator.next();
-                System.out.print(cell.toString() + ";");
-            }
-
-            System.out.println();
-        }
-
-        reader.closeFile();*/
+        
 
         AgendaBuilder ab = new AgendaBuilder();
         ab.addVertces();
