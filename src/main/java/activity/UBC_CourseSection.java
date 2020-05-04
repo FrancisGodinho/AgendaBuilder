@@ -12,41 +12,45 @@ public class UBC_CourseSection extends CourseSection{
 
     public UBC_CourseSection(int sectionNum, String lab, String tutorial, String discussion){
         super(sectionNum);
-        this.lab = lab;
-        this.tutorial = tutorial;
-        this.discussion = discussion;
+
+        if(lab == null || lab.equals(" "))
+            this.lab = new String();
+        else
+            this.lab = lab;
+
+        if(tutorial == null || tutorial.equals(" "))
+            this.tutorial = new String();
+        else
+            this.tutorial = tutorial;
+
+        if(discussion == null || discussion.equals(" "))
+            this.discussion = new String();
+        else
+            this.discussion = lab;
+
     }
 
     /**
      * get the lab section
      * @return the lab section
-     * @throws NoSuchElementException if there is no lab associated
      */
-    public String getLab() throws NoSuchElementException{
-        if(lab == null)
-            throw new NoSuchElementException("No lab found");
+    public String getLab(){
         return lab;
     }
 
     /**
      * get the tutorial section
      * @return the tutorial section
-     * @throws NoSuchElementException if there is no tutorial associated
      */
-    public String getTutorial() throws NoSuchElementException{
-        if(lab == null)
-            throw new NoSuchElementException("No tutorial found");
+    public String getTutorial(){
         return tutorial;
     }
 
     /**
      * get the discussion section
      * @return the discussion section
-     * @throws NoSuchElementException if there is no discussion associated
      */
-    public String getDiscussion() throws NoSuchElementException{
-        if(lab == null)
-            throw new NoSuchElementException("No discussion found");
+    public String getDiscussion(){
         return discussion;
     }
 

@@ -39,6 +39,11 @@ public class Duration{
         return timeInstance2.getTotalTimeMin() - timeInstance1.getTotalTimeMin();
     }
 
+    public String printDur(){
+        return timeInstance1.getDay().toString() + ", " + timeInstance1.getHour() + ":" + timeInstance1.getMin() + " to " +
+                timeInstance2.getDay().toString() + ", " + timeInstance2.getHour() + ":" + timeInstance2.getMin();
+    }
+
 
     @Override
     public boolean equals(Object o) {
