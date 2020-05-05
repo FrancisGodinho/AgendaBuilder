@@ -46,11 +46,11 @@ public class AgendaBuilder {
 
 
     private void initGraph(){
-        addVertces();
+        addVertices();
         addEdges();
     }
 
-    private void addVertces(){
+    private void addVertices(){
 
         ExcelReader excelReader = new ExcelReader("E:\\Desktop\\Summer Coding Projects\\AgendaBuilder\\course_data\\course_data.xlsx");
         XSSFSheet dataSheet = excelReader.getData();
@@ -134,7 +134,7 @@ public class AgendaBuilder {
 
 
         AgendaBuilder ab = new AgendaBuilder();
-        ab.addVertces();
+        ab.addVertices();
 
     }
 
