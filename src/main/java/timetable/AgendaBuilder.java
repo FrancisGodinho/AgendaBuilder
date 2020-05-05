@@ -46,11 +46,11 @@ public class AgendaBuilder {
 
 
     private void initGraph(){
-        addVertces();
+        addVertices();
         addEdges();
     }
 
-    private void addVertces(){
+    private void addVertices(){
 
         ExcelReader excelReader = new ExcelReader("E:\\Desktop\\Summer Coding Projects\\AgendaBuilder\\course_data\\course_data.xlsx");
         XSSFSheet dataSheet = excelReader.getData();
@@ -123,8 +123,28 @@ public class AgendaBuilder {
     }
 
 
+    //assume u have a list called sortedVertices, highest order vertex is first
     private void colorGraph(){
-        //TODO: Color the graph
+        List<ActivityVertex> sortedVertices = new ArrayList<>();
+        Set<ActivityVertex> adjVertices = new HashSet<>();
+        List<Integer> Used_Colour = new ArrayList<>();
+        int color = 1;
+
+        for(int i = 0; i < sortedVertices.size(); i ++){
+            if(sortedVertices.get(i).getColor() == 0) {
+                sortedVertices.get(i).updateColor(color);
+                adjVertices = adjacentVertices(sortedVertices.get(i));
+
+                for (int j = 1; j < adjVertices.size(); j++) {
+                    if (!adjVertices.contains(sortedVertices.get(j)) && (sortedVertices.get(j).getColor() == 0)
+                        sortedVertices.get(j).updateColor(sortedVertices.get(i).getColor());
+                }
+                Used_Colour.add(color);
+                color++;
+            }
+        }
+
+
     }
 
 
@@ -134,7 +154,7 @@ public class AgendaBuilder {
 
 
         AgendaBuilder ab = new AgendaBuilder();
-        ab.addVertces();
+        ab.addVertices();
 
     }
 
