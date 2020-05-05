@@ -44,10 +44,11 @@ public class AgendaBuilder {
 
 
     //assume u have a list called sortedVertices, highest order vertex is first
-    private void colorGraph(){
+    private Set<Integer> colorGraph(){
+
         List<ActivityVertex> sortedVertices = new ArrayList<>();
 
-        List<Integer> usedColors = new ArrayList<>();
+        Set<Integer> usedColors = new HashSet<>();
         int color = 1;
 
         for(int i = 0; i < sortedVertices.size(); i ++){
@@ -64,7 +65,21 @@ public class AgendaBuilder {
             }
         }
 
+        for(ActivityVertex currVertex : sortedVertices){
+            if(currVertex.getColor() == 0) {
+                currVertex.updateColor(color);
+                Set<ActivityVertex> adjVertices = courseGraph.adjacentVertices(currVertex);
 
+                for (ActivityVertex adjVertex : adjVertices)
+                    if (!adjVertices.contains(adjVertex) && adjVertex.getColor() == 0)
+                        adjVertex.updateColor(currVertex.getColor());
+
+                usedColors.add(color);
+                color++;
+            }
+        }
+
+        return usedColors;
     }
 
 
