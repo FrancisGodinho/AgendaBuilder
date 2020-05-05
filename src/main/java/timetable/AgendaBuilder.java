@@ -2,21 +2,14 @@ package main.java.timetable;
 
 
 
-import jdk.dynalink.linker.support.TypeUtilities;
 import main.java.activity.Course;
 
-import java.io.File;
 import java.io.IOException;
 
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.sql.Time;
 import java.util.*;
-import java.util.zip.Adler32;
 
-import main.java.activity.UBC_CourseActivity;
+import main.java.activity.CourseActivity;
 import main.java.activity.UBC_CourseSection;
 import main.java.course_graph.ActivityEdge;
 import main.java.course_graph.ActivityGraph;
@@ -27,7 +20,6 @@ import main.java.util.TimeInstance;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class AgendaBuilder {
 
@@ -97,7 +89,7 @@ public class AgendaBuilder {
 
             }
 
-            this.courseGraph.addVertex(new ActivityVertex(new UBC_CourseActivity(courseName, courseNum, currSection, durList)));
+            this.courseGraph.addVertex(new ActivityVertex(new CourseActivity(courseName, courseNum, currSection, durList)));
 
             System.out.println("Course Activity: " + row.getRowNum() + ": " + courseName + ", " + courseNum + ", " + currSection.getLecture() +
                     ", " + currSection.getLab() + ", " + currSection.getTutorial() + ", " + currSection.getDiscussion());

@@ -1,6 +1,6 @@
 package test.java.timetable_test;
 
-import main.java.activity.UBC_CourseActivity;
+import main.java.activity.CourseActivity;
 import main.java.activity.UBC_CourseSection;
 import main.java.timetable.TimeTable;
 import main.java.util.Day;
@@ -30,10 +30,10 @@ public class TimeTableTest {
         UBC_CourseSection sec3 = new UBC_CourseSection(201, "", "", "D2B");
         UBC_CourseSection sec4 = new UBC_CourseSection(202, "", "", "D2A");
 
-        UBC_CourseActivity course1 = new UBC_CourseActivity("Elec", 201, sec1, time1, time2);
-        UBC_CourseActivity course2 = new UBC_CourseActivity("Elec", 201, sec2, time3, time4);
-        UBC_CourseActivity course3 = new UBC_CourseActivity("Math", 253, sec3, time5, time6);
-        UBC_CourseActivity course4 = new UBC_CourseActivity("Math", 253, sec4, time7, time8);
+        CourseActivity course1 = new CourseActivity("Elec", 201, sec1, time1, time2);
+        CourseActivity course2 = new CourseActivity("Elec", 201, sec2, time3, time4);
+        CourseActivity course3 = new CourseActivity("Math", 253, sec3, time5, time6);
+        CourseActivity course4 = new CourseActivity("Math", 253, sec4, time7, time8);
 
 
         TimeTable timeTable = new TimeTable();
@@ -44,7 +44,7 @@ public class TimeTableTest {
         Assert.assertTrue(timeTable.doesConflict(course3));
         Assert.assertFalse(timeTable.doesConflict(course4));
 
-        timeTable.removeActivity(new UBC_CourseActivity("Elec", 201, sec1, time1, time2));
+        timeTable.removeActivity(new CourseActivity("Elec", 201, sec1, time1, time2));
         Assert.assertFalse(timeTable.doesConflict(course1));
         Assert.assertFalse(timeTable.doesConflict(course2));
         Assert.assertFalse(timeTable.doesConflict(course3));
@@ -71,10 +71,10 @@ public class TimeTableTest {
         UBC_CourseSection sec3 = new UBC_CourseSection(201, "", "", "D2B");
         UBC_CourseSection sec4 = new UBC_CourseSection(202, "", "", "D2A");
 
-        UBC_CourseActivity course1 = new UBC_CourseActivity("Elec", 201, sec1, time1, time2);
-        UBC_CourseActivity course2 = new UBC_CourseActivity("Elec", 201, sec2, time3, time4);
-        UBC_CourseActivity course3 = new UBC_CourseActivity("Math", 253, sec3, time5, time6);
-        UBC_CourseActivity course4 = new UBC_CourseActivity("Math", 253, sec4, time7, time8);
+        CourseActivity course1 = new CourseActivity("Elec", 201, sec1, time1, time2);
+        CourseActivity course2 = new CourseActivity("Elec", 201, sec2, time3, time4);
+        CourseActivity course3 = new CourseActivity("Math", 253, sec3, time5, time6);
+        CourseActivity course4 = new CourseActivity("Math", 253, sec4, time7, time8);
 
 
         TimeTable timeTable = new TimeTable();
@@ -119,12 +119,12 @@ public class TimeTableTest {
         UBC_CourseSection sec3 = new UBC_CourseSection(201, "", "", "D2B");
         UBC_CourseSection sec4 = new UBC_CourseSection(202, "", "", "D2A");
 
-        UBC_CourseActivity course1 = new UBC_CourseActivity("Elec", 201, sec1, time1, time2, time9, time10, time11, time12);
-        UBC_CourseActivity course2 = new UBC_CourseActivity("Elec", 201, sec2, time3, time4, time1, time2);
-        UBC_CourseActivity course3 = new UBC_CourseActivity("Math", 253, sec3, time5, time6, time9, time10);
-        UBC_CourseActivity course4 = new UBC_CourseActivity("Math", 253, sec4, time9, time10, time7, time8);
-        UBC_CourseActivity course5 = new UBC_CourseActivity("Cpen", 261, sec1, time11, time12, time13, time14);
-        UBC_CourseActivity course6 = new UBC_CourseActivity("Cpen", 261, sec3, time13, time14);
+        CourseActivity course1 = new CourseActivity("Elec", 201, sec1, time1, time2, time9, time10, time11, time12);
+        CourseActivity course2 = new CourseActivity("Elec", 201, sec2, time3, time4, time1, time2);
+        CourseActivity course3 = new CourseActivity("Math", 253, sec3, time5, time6, time9, time10);
+        CourseActivity course4 = new CourseActivity("Math", 253, sec4, time9, time10, time7, time8);
+        CourseActivity course5 = new CourseActivity("Cpen", 261, sec1, time11, time12, time13, time14);
+        CourseActivity course6 = new CourseActivity("Cpen", 261, sec3, time13, time14);
 
 
         TimeTable timeTable = new TimeTable();

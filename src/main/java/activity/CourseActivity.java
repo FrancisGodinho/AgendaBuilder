@@ -6,7 +6,7 @@ import main.java.util.TimeInstance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseActivity {
+public class CourseActivity{
 
     private String courseName;
     private int courseNum;
@@ -77,7 +77,7 @@ public class CourseActivity {
      * @param otherActivity the other activity that is being compared
      * @return true if the conflict, false otherwise
      */
-    public boolean doesConflict(UBC_CourseActivity otherActivity){
+    public boolean doesConflict(CourseActivity otherActivity){
 
         List<Duration> testDurations = otherActivity.getCourseTimes();
 

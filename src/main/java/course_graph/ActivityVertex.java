@@ -1,10 +1,10 @@
 package main.java.course_graph;
 
-import main.java.activity.UBC_CourseActivity;
+import main.java.activity.CourseActivity;
 
 public class ActivityVertex {
 
-    private final UBC_CourseActivity activity;
+    private final CourseActivity activity;
     private int color;
 
 
@@ -12,7 +12,7 @@ public class ActivityVertex {
      * Create a new ActivityVertex
      * @param vertexActivity the activity that the vertex represents
      */
-    public ActivityVertex(UBC_CourseActivity vertexActivity){
+    public ActivityVertex(CourseActivity vertexActivity){
         this.activity = vertexActivity;
         color = 0;
     }
@@ -21,7 +21,7 @@ public class ActivityVertex {
      * Obtain the activity of the vertex
      * @return the course activity of the vertex
      */
-    public UBC_CourseActivity getActivity(){
+    public CourseActivity getActivity(){
         return activity;
     }
 

@@ -1,8 +1,7 @@
 package test.java.courses_graph_test;
 
 
-import com.sun.source.tree.AssertTree;
-import main.java.activity.UBC_CourseActivity;
+import main.java.activity.CourseActivity;
 import main.java.activity.UBC_CourseSection;
 import main.java.course_graph.ActivityEdge;
 import main.java.course_graph.ActivityGraph;
@@ -13,7 +12,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import java.sql.Time;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -42,10 +40,10 @@ public class ActivityGraphTest {
         UBC_CourseSection sec4 = new UBC_CourseSection(202, "", "", "");
 
         //these are courses
-        UBC_CourseActivity course1 = new UBC_CourseActivity("Elec", 201, sec1, time1, time2);
-        UBC_CourseActivity course2 = new UBC_CourseActivity("Elec", 201, sec2, time3, time4);
-        UBC_CourseActivity course3 = new UBC_CourseActivity("Math", 253, sec3, time5, time6);
-        UBC_CourseActivity course4 = new UBC_CourseActivity("Math", 253, sec4, time7, time8);
+        CourseActivity course1 = new CourseActivity("Elec", 201, sec1, time1, time2);
+        CourseActivity course2 = new CourseActivity("Elec", 201, sec2, time3, time4);
+        CourseActivity course3 = new CourseActivity("Math", 253, sec3, time5, time6);
+        CourseActivity course4 = new CourseActivity("Math", 253, sec4, time7, time8);
 
 
         //create vertices
@@ -110,10 +108,10 @@ public class ActivityGraphTest {
         UBC_CourseSection sec4 = new UBC_CourseSection(202, "", "", "");
 
         //these are courses
-        UBC_CourseActivity course1 = new UBC_CourseActivity("Elec", 201, sec1, time1, time2);
-        UBC_CourseActivity course2 = new UBC_CourseActivity("Elec", 201, sec2, time3, time4);
-        UBC_CourseActivity course3 = new UBC_CourseActivity("Math", 253, sec3, time5, time6);
-        UBC_CourseActivity course4 = new UBC_CourseActivity("Math", 253, sec4, time7, time8);
+        CourseActivity course1 = new CourseActivity("Elec", 201, sec1, time1, time2);
+        CourseActivity course2 = new CourseActivity("Elec", 201, sec2, time3, time4);
+        CourseActivity course3 = new CourseActivity("Math", 253, sec3, time5, time6);
+        CourseActivity course4 = new CourseActivity("Math", 253, sec4, time7, time8);
 
 
         //create vertices
@@ -178,10 +176,10 @@ public class ActivityGraphTest {
         UBC_CourseSection sec4 = new UBC_CourseSection(202, "", "", "");
 
         //these are courses
-        UBC_CourseActivity course1 = new UBC_CourseActivity("Elec", 201, sec1, time1, time2);
-        UBC_CourseActivity course2 = new UBC_CourseActivity("Elec", 201, sec2, time3, time4);
-        UBC_CourseActivity course3 = new UBC_CourseActivity("Math", 253, sec3, time5, time6);
-        UBC_CourseActivity course4 = new UBC_CourseActivity("Math", 253, sec4, time7, time8);
+        CourseActivity course1 = new CourseActivity("Elec", 201, sec1, time1, time2);
+        CourseActivity course2 = new CourseActivity("Elec", 201, sec2, time3, time4);
+        CourseActivity course3 = new CourseActivity("Math", 253, sec3, time5, time6);
+        CourseActivity course4 = new CourseActivity("Math", 253, sec4, time7, time8);
 
         //create vertices
         ActivityVertex vertex1 = new ActivityVertex(course1);
@@ -251,10 +249,10 @@ public class ActivityGraphTest {
         UBC_CourseSection sec4 = new UBC_CourseSection(202, "", "", "");
 
         //these are courses
-        UBC_CourseActivity course1 = new UBC_CourseActivity("Elec", 201, sec1, time1, time2);
-        UBC_CourseActivity course2 = new UBC_CourseActivity("Elec", 201, sec2, time3, time4);
-        UBC_CourseActivity course3 = new UBC_CourseActivity("Math", 253, sec3, time5, time6);
-        UBC_CourseActivity course4 = new UBC_CourseActivity("Math", 253, sec4, time7, time8);
+        CourseActivity course1 = new CourseActivity("Elec", 201, sec1, time1, time2);
+        CourseActivity course2 = new CourseActivity("Elec", 201, sec2, time3, time4);
+        CourseActivity course3 = new CourseActivity("Math", 253, sec3, time5, time6);
+        CourseActivity course4 = new CourseActivity("Math", 253, sec4, time7, time8);
 
         //create vertices
         ActivityVertex vertex1 = new ActivityVertex(course1);
@@ -324,10 +322,10 @@ public class ActivityGraphTest {
         UBC_CourseSection sec4 = new UBC_CourseSection(202, "", "", "");
 
         //these are courses
-        UBC_CourseActivity course1 = new UBC_CourseActivity("Elec", 201, sec1, time1, time2);
-        UBC_CourseActivity course2 = new UBC_CourseActivity("Elec", 201, sec2, time3, time4);
-        UBC_CourseActivity course3 = new UBC_CourseActivity("Math", 253, sec3, time5, time6);
-        UBC_CourseActivity course4 = new UBC_CourseActivity("Math", 253, sec4, time7, time8);
+        CourseActivity course1 = new CourseActivity("Elec", 201, sec1, time1, time2);
+        CourseActivity course2 = new CourseActivity("Elec", 201, sec2, time3, time4);
+        CourseActivity course3 = new CourseActivity("Math", 253, sec3, time5, time6);
+        CourseActivity course4 = new CourseActivity("Math", 253, sec4, time7, time8);
 
         //create vertices
         ActivityVertex vertex1 = new ActivityVertex(course1);
