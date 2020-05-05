@@ -6,7 +6,7 @@ import main.java.util.TimeInstance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseActivity {
+public class CourseActivity{
 
     private String courseName;
     private int courseNum;
@@ -77,7 +77,7 @@ public class CourseActivity {
      * @param otherActivity the other activity that is being compared
      * @return true if the conflict, false otherwise
      */
-    public boolean doesConflict(UBC_CourseActivity otherActivity){
+    public boolean doesConflict(CourseActivity otherActivity){
 
         List<Duration> testDurations = otherActivity.getCourseTimes();
 
@@ -96,8 +96,8 @@ public class CourseActivity {
      * @return true if the two durations conflict, false otherwise
      */
     private boolean durConflict(Duration dur1, Duration dur2){
-        return !((dur1.getFirstTime().isAfter(dur2.getFirstTime()) && dur1.getFirstTime().isAfter(dur2.getSecondTime())) ||
-                (dur2.getFirstTime().isAfter(dur1.getFirstTime()) && dur2.getFirstTime().isAfter(dur1.getSecondTime())));
+        return !(dur1.getFirstTime().isAfter(dur2.getSecondTime()) && dur1.getSecondTime().isAfter(dur2.getSecondTime()) ||
+                !dur1.getSecondTime().isAfter(dur2.getFirstTime()) && !dur1.getSecondTime().isAfter(dur2.getFirstTime()));
     }
 
 
