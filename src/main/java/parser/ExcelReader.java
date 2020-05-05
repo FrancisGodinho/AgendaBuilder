@@ -1,4 +1,4 @@
-package main.java.timetable;
+package main.java.parser;
 
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
