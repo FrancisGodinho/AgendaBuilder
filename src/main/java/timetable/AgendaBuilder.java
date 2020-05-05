@@ -136,7 +136,7 @@ public class AgendaBuilder {
                 adjVertices = adjacentVertices(sortedVertices.get(i));
 
                 for (int j = 1; j < adjVertices.size(); j++) {
-                    if (!adjVertices.contains(sortedVertices.get(j)) && (sortedVertices.get(j).getColor() == 0)
+                    if (!adjVertices.contains(sortedVertices.get(j)) && (sortedVertices.get(j).getColor() == 0))
                         sortedVertices.get(j).updateColor(sortedVertices.get(i).getColor());
                 }
                 Used_Colour.add(color);
