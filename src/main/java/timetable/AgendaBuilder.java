@@ -1,10 +1,5 @@
 package main.java.timetable;
-
-
-
 import main.java.activity.Course;
-
-import java.io.IOException;
 
 
 import java.util.*;
@@ -34,37 +29,6 @@ public class AgendaBuilder {
 
 
     private void initGraph(){
-        addVertices();
-        addEdges();
-    }
-
-    private void addVertices(){
-
-        ExcelReader excelReader = new ExcelReader("E:\\Desktop\\Summer Coding Projects\\AgendaBuilder\\course_data\\course_data.xlsx");
-        XSSFSheet dataSheet = excelReader.getData();
-
-        Iterator<Row> rowIt = dataSheet.iterator();
-
-        while(rowIt.hasNext()) {
-            Row row = rowIt.next();
-
-            // iterate on cells for the current row
-            Iterator<Cell> cellIterator = row.cellIterator();
-
-            String courseName = row.getCell(0).toString();
-            int courseNum = (int)row.getCell(1).getNumericCellValue();
-
-            UBC_CourseSection currSection = new UBC_CourseSection((int)row.getCell(2).getNumericCellValue(),
-                    row.getCell(3).toString(), row.getCell(4).toString(), row.getCell(5).toString());
-
-            List<Duration> durList = new ArrayList<>();
-
-            while (cellIterator.hasNext()) {
-                Cell cell = cellIterator.next();
-                TimeInstance currentStart = null;
-                TimeInstance currentEnd = null;
-
-                if(cell.getColumnIndex() >= 6 && cell.getColumnIndex() % 3 == 0){
 
         //add vertices to graph
         this.parser.initVertices(this.courseGraph);
@@ -82,27 +46,26 @@ public class AgendaBuilder {
     //assume u have a list called sortedVertices, highest order vertex is first
     private void colorGraph(){
         List<ActivityVertex> sortedVertices = new ArrayList<>();
-        Set<ActivityVertex> adjVertices = new HashSet<>();
-        List<Integer> Used_Colour = new ArrayList<>();
+
+        List<Integer> usedColors = new ArrayList<>();
         int color = 1;
 
         for(int i = 0; i < sortedVertices.size(); i ++){
             if(sortedVertices.get(i).getColor() == 0) {
                 sortedVertices.get(i).updateColor(color);
-                adjVertices = adjacentVertices(sortedVertices.get(i));
+                Set<ActivityVertex> adjVertices = courseGraph.adjacentVertices(sortedVertices.get(i));
 
                 for (int j = 1; j < adjVertices.size(); j++) {
                     if (!adjVertices.contains(sortedVertices.get(j)) && (sortedVertices.get(j).getColor() == 0))
                         sortedVertices.get(j).updateColor(sortedVertices.get(i).getColor());
                 }
-                Used_Colour.add(color);
+                usedColors.add(color);
                 color++;
             }
         }
 
 
     }
-
 
 
 
