@@ -51,12 +51,12 @@ public class AgendaBuilder {
     private void colorGraph(){
         //TODO: Color the graph
     }
-    
 
 
 
 
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args){
 
         String path = "E:\\Desktop\\Summer Coding Projects\\AgendaBuilder\\course_data\\course_data.xlsx";
         ExcelParser ubcParser = new UBCExcelParser(path);
