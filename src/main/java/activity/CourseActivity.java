@@ -96,8 +96,8 @@ public class CourseActivity{
      * @return true if the two durations conflict, false otherwise
      */
     private boolean durConflict(Duration dur1, Duration dur2){
-        return !((dur1.getFirstTime().isAfter(dur2.getFirstTime()) && dur1.getFirstTime().isAfter(dur2.getSecondTime())) ||
-                (dur2.getFirstTime().isAfter(dur1.getFirstTime()) && dur2.getFirstTime().isAfter(dur1.getSecondTime())));
+        return !(dur1.getFirstTime().isAfter(dur2.getSecondTime()) && dur1.getSecondTime().isAfter(dur2.getSecondTime()) ||
+                !dur1.getSecondTime().isAfter(dur2.getFirstTime()) && !dur1.getSecondTime().isAfter(dur2.getFirstTime()));
     }
 
 

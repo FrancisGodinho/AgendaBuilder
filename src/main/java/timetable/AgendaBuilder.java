@@ -13,7 +13,6 @@ import main.java.course_graph.ActivityEdge;
 import main.java.course_graph.ActivityGraph;
 import main.java.course_graph.ActivityVertex;
 import main.java.parser.ExcelParser;
-import main.java.parser.ExcelReader;
 import main.java.parser.UBCExcelParser;
 
 public class AgendaBuilder {
@@ -22,7 +21,6 @@ public class AgendaBuilder {
     ExcelParser parser;
 
     public AgendaBuilder(ExcelParser parser){
-
         this.courseGraph = new ActivityGraph();
         this.parser = parser;
     }
@@ -36,20 +34,11 @@ public class AgendaBuilder {
 
 
     private void initGraph(){
-        addVertices();
-        addEdges();
-    }
 
-    private void addVertices(){
-
-
+        //add vertices to graph
         this.parser.initVertices(this.courseGraph);
 
-
-
-    }
-
-    private void addEdges(){
+        //add edges to graph
         Set<ActivityVertex> vertexSet = this.courseGraph.allVertices();
 
         for(ActivityVertex v : vertexSet)
@@ -62,6 +51,7 @@ public class AgendaBuilder {
     private void colorGraph(){
         //TODO: Color the graph
     }
+    
 
 
 
@@ -71,7 +61,7 @@ public class AgendaBuilder {
         String path = "E:\\Desktop\\Summer Coding Projects\\AgendaBuilder\\course_data\\course_data.xlsx";
         ExcelParser ubcParser = new UBCExcelParser(path);
         AgendaBuilder ab = new AgendaBuilder(ubcParser);
-        ab.addVertices();
+        ab.initGraph();
 
     }
 
