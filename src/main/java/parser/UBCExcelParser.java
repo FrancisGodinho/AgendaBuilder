@@ -73,12 +73,12 @@ public class UBCExcelParser implements ExcelParser {
 
             courseGraph.addVertex(new ActivityVertex(new CourseActivity(courseName, courseNum, currSection, durList)));
 
-            System.out.println("Course Activity: " + row.getRowNum() + ": " + courseName + ", " + courseNum + ", " + currSection.getLecture() +
+/*            System.out.println("Course Activity: " + row.getRowNum() + ": " + courseName + ", " + courseNum + ", " + currSection.getLecture() +
                     ", " + currSection.getLab() + ", " + currSection.getTutorial() + ", " + currSection.getDiscussion());
 
             for(Duration d : durList)
                 System.out.println(d.printDur());
-            System.out.println();
+            System.out.println();*/
 
         }
 

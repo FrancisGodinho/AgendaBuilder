@@ -14,7 +14,7 @@ public class ActivityVertex {
      */
     public ActivityVertex(CourseActivity vertexActivity){
         this.activity = vertexActivity;
-        color = 0;
+        color = -1;
     }
 
     /**
@@ -52,7 +52,7 @@ public class ActivityVertex {
 
     @Override
     public int hashCode(){
-        int result = color + activity.hashCode();
+        int result = Math.abs(activity.hashCode() * 2);
         return result;
     }
 
