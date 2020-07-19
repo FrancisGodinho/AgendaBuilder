@@ -61,6 +61,9 @@ public class ActivityGraph implements IGraph{
 
         adjacencyList.get(e.v1()).add(e.v2());
         adjacencyList.get(e.v2()).add(e.v1());
+
+        vertexMap.put(e.v1(), vertexMap.get(e.v1()) + 1);
+        vertexMap.put(e.v2(), vertexMap.get(e.v2()) + 1);
         edgeSet.add(e);
 
         return true;

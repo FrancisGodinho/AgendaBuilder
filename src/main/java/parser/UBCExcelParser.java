@@ -21,7 +21,7 @@ public class UBCExcelParser implements ExcelParser {
     String filePath;
 
     public UBCExcelParser(String excelFilePath){
-        filePath = excelFilePath;
+        this.filePath = excelFilePath;
     }
 
 

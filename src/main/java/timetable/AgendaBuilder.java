@@ -77,34 +77,49 @@ public class AgendaBuilder {
 
 
     //assume u have a list called sortedVertices, highest order vertex is first
+    // colors will be values from 0 onwards
     private int colorGraph(){
 
         List<ActivityVertex> sortedVertices = new ArrayList<>(courseGraph.allVertices());
+        Set<Integer> colours = new HashSet<>();
+        colours.add(0);
 
-        Set<Integer> usedColors = new HashSet<>();
-        int color = 0;
+        sortedVertices.get(0).updateColor(0);
 
-        for(ActivityVertex currVertex : sortedVertices){
-            if(currVertex.getColor() == -1) {
+        for(int i = 1; i < sortedVertices.size(); i++){
+            ActivityVertex currVertex = sortedVertices.get(i);
+            Set<ActivityVertex> neighbours = this.courseGraph.adjacentVertices(currVertex);
 
-                currVertex.updateColor(color);
+            colorVertex(currVertex, neighbours, colours);
+            colours.add(currVertex.getColor());
 
-                Set<ActivityVertex> adjVertices = courseGraph.adjacentVertices(currVertex);
-                Set<ActivityVertex> allVertices = courseGraph.allVertices();
-
-                for (ActivityVertex nextVertex : allVertices)
-                    if (!adjVertices.contains(nextVertex) && nextVertex.getColor() == -1)
-                        nextVertex.updateColor(color);
-
-                usedColors.add(color);
-                color++;
-            }
         }
-
-        return usedColors.size();
+        return colours.size();
     }
 
+    private void colorVertex(ActivityVertex vertex, Set<ActivityVertex> neighbours, Set<Integer> colorsUsed){
 
+        int color = -1;
+        for(int currColor : colorsUsed){
+
+            color = currColor;
+
+            //check if the color is valid
+            for(ActivityVertex n : neighbours)
+                if(n.getColor() == currColor){
+                    color = -1;
+                    break;
+                }
+
+            if(color != - 1)
+                break;
+        }
+
+        if(color == -1)
+            vertex.updateColor(colorsUsed.size());
+        else
+            vertex.updateColor(color);
+    }
 
 
     public static void main(String[] args){
