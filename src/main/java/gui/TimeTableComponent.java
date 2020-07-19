@@ -20,7 +20,7 @@ import java.util.*;
 
 public class TimeTableComponent{
 
-    GridPane table = new GridPane();
+    private GridPane table = new GridPane();
 
     private int height, width;
     private String backgroundColor, secondaryColour;
@@ -69,7 +69,7 @@ public class TimeTableComponent{
      * @return a GridPane element which is the timetable that has been created
      */
     public GridPane draw(List<CourseActivity> courses){
-
+        table = new GridPane();
         table.setStyle("-fx-background-color: " + this.backgroundColor);
 
         addHeaders();
