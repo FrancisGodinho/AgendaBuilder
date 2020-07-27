@@ -26,7 +26,7 @@ public class UBC_CourseSection extends CourseSection{
         if(discussion == null || discussion.equals(" "))
             this.discussion = new String();
         else
-            this.discussion = lab;
+            this.discussion = discussion;
 
     }
 

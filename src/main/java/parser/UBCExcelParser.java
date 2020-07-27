@@ -25,7 +25,7 @@ public class UBCExcelParser implements ExcelParser {
     }
 
 
-    public void initVertices(ActivityGraph courseGraph) {
+    public void initVertices(ActivityGraph courseGraph, List<String> courseNames) {
         ExcelReader excelReader = new ExcelReader(filePath);
         XSSFSheet dataSheet = excelReader.getData();
 
@@ -37,8 +37,11 @@ public class UBCExcelParser implements ExcelParser {
             // iterate on cells for the current row
             Iterator<Cell> cellIterator = row.cellIterator();
 
-            String courseName = row.getCell(0).toString();
+            String courseName = row.getCell(0).toString().toUpperCase();
             int courseNum = (int)row.getCell(1).getNumericCellValue();
+
+            if(!courseNames.contains(courseName.toUpperCase() + courseNum))
+                continue;
 
             UBC_CourseSection currSection = new UBC_CourseSection((int)row.getCell(2).getNumericCellValue(),
                     row.getCell(3).toString(), row.getCell(4).toString(), row.getCell(5).toString());
@@ -47,8 +50,8 @@ public class UBCExcelParser implements ExcelParser {
 
             while (cellIterator.hasNext()) {
                 Cell cell = cellIterator.next();
-                TimeInstance currentStart = null;
-                TimeInstance currentEnd = null;
+                TimeInstance currentStart;
+                TimeInstance currentEnd;
 
                 if(cell.getColumnIndex() >= 6 && cell.getColumnIndex() % 3 == 0){
 
@@ -73,12 +76,6 @@ public class UBCExcelParser implements ExcelParser {
 
             courseGraph.addVertex(new ActivityVertex(new CourseActivity(courseName, courseNum, currSection, durList)));
 
-/*            System.out.println("Course Activity: " + row.getRowNum() + ": " + courseName + ", " + courseNum + ", " + currSection.getLecture() +
-                    ", " + currSection.getLab() + ", " + currSection.getTutorial() + ", " + currSection.getDiscussion());
-
-            for(Duration d : durList)
-                System.out.println(d.printDur());
-            System.out.println();*/
 
         }
 

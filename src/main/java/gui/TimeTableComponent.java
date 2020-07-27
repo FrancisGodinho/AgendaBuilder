@@ -25,12 +25,12 @@ public class TimeTableComponent{
     private int height, width;
     private String backgroundColor, secondaryColour;
 
-    private final int maxElements = 28, timeMinX = 40;
+    private final int maxElements = 30, timeMinX = 40;
     private int elementWidth;
     private int elementHeight;
 
     private final int courseElemFontSize = 12;
-    private final List<String> elementColors = new ArrayList<>(Arrays.asList("#e36c6c", "#52e171", "#6e7ffb", "#fb6ed1", "#f0a262"));
+    private final List<String> elementColors = new ArrayList<>(Arrays.asList("#e36c6c", "#6e7ffb", "#fb6ed1", "#f0a262", "#52e171", "#8634D3", "#34C9D3"));
 
     public TimeTableComponent(int width, int height, String backgroundColor, String secondaryColor){
         this.height = height;
@@ -42,17 +42,19 @@ public class TimeTableComponent{
         this.elementHeight = this.height / this.maxElements;
     }
 
-    //TODO: Delete =========================================================================================================
+    //TODO: Delete this method =========================================================================================================
     private List<CourseActivity> testCourses(){
         CourseSection section = new UBC_CourseSection(201, "L2A", null, null);
-        List<Duration> times1 = new ArrayList<>(Arrays.asList(new Duration(new TimeInstance(Day.FRI, 10, 30), new TimeInstance(Day.FRI, 11, 30)),
+        List<Duration> times1 = new ArrayList<>(Arrays.asList(
+                new Duration(new TimeInstance(Day.FRI, 10, 30), new TimeInstance(Day.FRI, 11, 30)),
                 new Duration(new TimeInstance(Day.MON, 11, 30), new TimeInstance(Day.MON, 12, 30)),
                 new Duration(new TimeInstance(Day.MON, 13, 00), new TimeInstance(Day.MON, 14, 30)),
                 new Duration(new TimeInstance(Day.FRI, 9, 00), new TimeInstance(Day.FRI, 10, 00)),
                 new Duration(new TimeInstance(Day.WED, 10, 00), new TimeInstance(Day.WED, 13, 00)),
                 new Duration(new TimeInstance(Day.THURS, 15, 00), new TimeInstance(Day.THURS, 16, 30))));
 
-        List<Duration> times2 = new ArrayList<>(Arrays.asList(new Duration(new TimeInstance(Day.MON, 10, 30), new TimeInstance(Day.MON, 11, 30)),
+        List<Duration> times2 = new ArrayList<>(Arrays.asList(
+                new Duration(new TimeInstance(Day.MON, 10, 30), new TimeInstance(Day.MON, 11, 30)),
                 new Duration(new TimeInstance(Day.MON, 17, 30), new TimeInstance(Day.MON, 18, 30)),
                 new Duration(new TimeInstance(Day.TUES, 8, 00), new TimeInstance(Day.TUES, 9, 30)),
                 new Duration(new TimeInstance(Day.TUES, 13, 00), new TimeInstance(Day.TUES, 14, 00))));
@@ -60,7 +62,7 @@ public class TimeTableComponent{
         CourseActivity course1 = new CourseActivity("CPSC", 259, section, times1);
         CourseActivity course2 = new CourseActivity("MATH", 253, section, times2);
 
-        return new ArrayList<>(Arrays.asList(course1, course2));
+        return new ArrayList<>(Arrays.asList(course1));
     }
 
     /**
@@ -73,7 +75,7 @@ public class TimeTableComponent{
         table.setStyle("-fx-background-color: " + this.backgroundColor);
 
         addHeaders();
-        courses = testCourses(); //TODO: REMOVE THIS LINE
+        //courses = testCourses(); //TODO: REMOVE THIS LINE
 
         List<Day> days = new ArrayList<>(Arrays.asList(Day.MON, Day.TUES, Day.WED, Day.THURS, Day.FRI));
 
@@ -87,7 +89,7 @@ public class TimeTableComponent{
         for(Duration duration : timeCourseMap.keySet()) {
 
             String color = this.elementColors.get(courses.indexOf(timeCourseMap.get(duration)) % this.elementColors.size());
-            int row = 2 * duration.getFirstTime().getHour() - 13 + duration.getFirstTime().getMin() / 30; // row formula: f(hour, min) = 2 * (hour - 7) - 1 + (min / 30)
+            int row = 2 * duration.getFirstTime().getHour() - 15 + duration.getFirstTime().getMin() / 30; // row formula: f(hour, min) = 2 * (hour - 7) - 1 + (min / 30) - 2
             int col = days.indexOf(duration.getFirstTime().getDay()) + 1;
 
             //remove first and second elements and add course + section information
@@ -120,6 +122,7 @@ public class TimeTableComponent{
                 table.getChildren().remove(node);
                 break;
             }
+
     }
 
     /**
@@ -171,7 +174,7 @@ public class TimeTableComponent{
      * @return a Label which represents a course element
      */
     private Label courseElement(CourseActivity course, String color){
-        Label elem = new Label(course.getCourseName() + " " + course.getCourseNum() + "\n     " + course.getCourseSection().getLecture());
+        Label elem = new Label(course.getCourseName() + " " + course.getCourseNum());
         elem.setAlignment(Pos.CENTER);
         elem.setFont(new Font(elem.getFont().getName(), this.courseElemFontSize));
 
@@ -204,14 +207,12 @@ public class TimeTableComponent{
      * @return the text that represents the section
      */
     private String courseSectionText(CourseActivity course){
-        UBC_CourseSection section = (UBC_CourseSection) course.getCourseSection();
-        String text = "";
-        if(!section.getLab().equals(""))
-            text = text + "Lab: " + section.getLab() + "  ";
-        if(!section.getTutorial().equals(""))
-            text = text + "Tutorial: " + section.getTutorial() + "  ";
-        if(!section.getDiscussion().equals(""))
-            text = text + "Discussion: " + section.getDiscussion() + "  ";
+
+        List<String> sections = course.getCourseSection().getSections();
+        String text = " " + Integer.toString(course.getCourseSection().getLecture());
+        for(String section : sections)
+            text += " " + section;
+
         return text;
     }
 

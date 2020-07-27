@@ -9,7 +9,6 @@ import main.java.course_graph.ActivityEdge;
 import main.java.course_graph.ActivityGraph;
 import main.java.course_graph.ActivityVertex;
 import main.java.parser.ExcelParser;
-import main.java.parser.UBCExcelParser;
 import main.java.util.Duration;
 
 public class AgendaBuilder {
@@ -22,12 +21,19 @@ public class AgendaBuilder {
         this.parser = parser;
     }
 
-
-    public TimeTable buildAgenda(Course... courses){
-        initGraph();
+    public List<CourseActivity> buildAgenda(List<String> courses){
+        initGraph(courses);
         int numColors = colorGraph();
-        List<List<CourseActivity>> retList = getColorGroups(numColors);
+        List<List<CourseActivity>> timeTableList = getColorGroups(numColors);
 
+        //TODO: REMOVE THIS LINE
+        printTables(timeTableList);
+
+        return getTimeTable(timeTableList, courses.size());
+    }
+
+    //TODO: REMOVE THIS METHOD
+    private void printTables(List<List<CourseActivity>> retList){
         int i = 1;
         for(List<CourseActivity> activityList : retList){
 
@@ -44,7 +50,31 @@ public class AgendaBuilder {
             System.out.println();
             i++;
         }
-        return new TimeTable();
+    }
+
+    private List<CourseActivity> getTimeTable(List<List<CourseActivity>> timeTableList, int numCourses){
+
+        for(List<CourseActivity> timeTable : timeTableList){
+
+            if(timeTable.size() < numCourses)
+                continue;
+
+            Set<String> courseInfo = new HashSet<>();
+            Iterator <CourseActivity> courses = timeTable.iterator();
+
+            while(courses.hasNext()){
+                CourseActivity course = courses.next();
+                if(courseInfo.contains(course.getCourseName() + course.getCourseNum()))
+                    courses.remove();
+                else
+                    courseInfo.add(course.getCourseName() + course.getCourseNum());
+            }
+
+            if(courseInfo.size() == numCourses)
+                return timeTable;
+        }
+
+        return new ArrayList<>();
     }
 
     private List<List<CourseActivity>> getColorGroups(int numColorsUsed) {
@@ -61,10 +91,10 @@ public class AgendaBuilder {
     }
 
 
-    private void initGraph(){
+    private void initGraph(List<String> courseNames){
 
         //add vertices to graph
-        this.parser.initVertices(this.courseGraph);
+        this.parser.initVertices(this.courseGraph, courseNames);
 
         //add edges to graph
         Set<ActivityVertex> vertexSet = this.courseGraph.allVertices();
@@ -80,8 +110,13 @@ public class AgendaBuilder {
     // colors will be values from 0 onwards
     private int colorGraph(){
 
+
         List<ActivityVertex> sortedVertices = new ArrayList<>(courseGraph.allVertices());
         Set<Integer> colours = new HashSet<>();
+
+        if (sortedVertices.size() == 0)
+            return 0;
+
         colours.add(0);
 
         sortedVertices.get(0).updateColor(0);
@@ -100,6 +135,8 @@ public class AgendaBuilder {
     private void colorVertex(ActivityVertex vertex, Set<ActivityVertex> neighbours, Set<Integer> colorsUsed){
 
         int color = -1;
+
+        //try to use a color from colorsUsed
         for(int currColor : colorsUsed){
 
             color = currColor;
@@ -111,6 +148,7 @@ public class AgendaBuilder {
                     break;
                 }
 
+            // if color is valid (not -1) then break, otherwise try another color
             if(color != - 1)
                 break;
         }
@@ -121,16 +159,6 @@ public class AgendaBuilder {
             vertex.updateColor(color);
     }
 
-
-    public static void main(String[] args){
-
-        String path = "E:\\Desktop\\Summer Coding Projects\\AgendaBuilder\\course_data\\course_data.xlsx";
-        ExcelParser ubcParser = new UBCExcelParser(path);
-        AgendaBuilder ab = new AgendaBuilder(ubcParser);
-
-        ab.buildAgenda();
-
-    }
 
 
 

@@ -1,6 +1,9 @@
 package main.java.activity;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CourseSection {
 
     private int lecture;
@@ -21,6 +24,13 @@ public class CourseSection {
         return lecture;
     }
 
+    /**
+     * Get all the sections (excluding the lecture section)
+     * @return a list of all sections
+     */
+    public List<String> getSections(){
+        return new ArrayList<>();
+    }
 
     @Override
     public boolean equals(Object o) {
