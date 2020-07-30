@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -41,6 +42,7 @@ public class MainGUI extends Application {
 
         window = primaryStage;
         window.setTitle("AgendaBuilder");
+        window.getIcons().add(new Image("File:img\\AgendaBuilderFavicon.JPG"));
         window.setResizable(false);
 
         //create timetable and add course components

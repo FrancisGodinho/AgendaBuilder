@@ -9,11 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 
 import main.java.activity.CourseActivity;
-import main.java.activity.CourseSection;
-import main.java.activity.UBC_CourseSection;
 import main.java.util.Day;
 import main.java.util.Duration;
-import main.java.util.TimeInstance;
 
 import java.util.*;
 
@@ -42,29 +39,6 @@ public class TimeTableComponent{
         this.elementHeight = this.height / this.maxElements;
     }
 
-    //TODO: Delete this method =========================================================================================================
-    private List<CourseActivity> testCourses(){
-        CourseSection section = new UBC_CourseSection(201, "L2A", null, null);
-        List<Duration> times1 = new ArrayList<>(Arrays.asList(
-                new Duration(new TimeInstance(Day.FRI, 10, 30), new TimeInstance(Day.FRI, 11, 30)),
-                new Duration(new TimeInstance(Day.MON, 11, 30), new TimeInstance(Day.MON, 12, 30)),
-                new Duration(new TimeInstance(Day.MON, 13, 00), new TimeInstance(Day.MON, 14, 30)),
-                new Duration(new TimeInstance(Day.FRI, 9, 00), new TimeInstance(Day.FRI, 10, 00)),
-                new Duration(new TimeInstance(Day.WED, 10, 00), new TimeInstance(Day.WED, 13, 00)),
-                new Duration(new TimeInstance(Day.THURS, 15, 00), new TimeInstance(Day.THURS, 16, 30))));
-
-        List<Duration> times2 = new ArrayList<>(Arrays.asList(
-                new Duration(new TimeInstance(Day.MON, 10, 30), new TimeInstance(Day.MON, 11, 30)),
-                new Duration(new TimeInstance(Day.MON, 17, 30), new TimeInstance(Day.MON, 18, 30)),
-                new Duration(new TimeInstance(Day.TUES, 8, 00), new TimeInstance(Day.TUES, 9, 30)),
-                new Duration(new TimeInstance(Day.TUES, 13, 00), new TimeInstance(Day.TUES, 14, 00))));
-
-        CourseActivity course1 = new CourseActivity("CPSC", 259, section, times1);
-        CourseActivity course2 = new CourseActivity("MATH", 253, section, times2);
-
-        return new ArrayList<>(Arrays.asList(course1));
-    }
-
     /**
      * Draw the timetable
      * @param courses a list of courses which should be placed in the table
@@ -75,7 +49,6 @@ public class TimeTableComponent{
         table.setStyle("-fx-background-color: " + this.backgroundColor);
 
         addHeaders();
-        //courses = testCourses(); //TODO: REMOVE THIS LINE
 
         List<Day> days = new ArrayList<>(Arrays.asList(Day.MON, Day.TUES, Day.WED, Day.THURS, Day.FRI));
 

@@ -9,7 +9,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.util.Duration;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -91,6 +91,11 @@ public class AddCourseComponent {
         return logo;
     }
 
+    /**
+     * Create a label package containing the course name
+     * to the addCourse Component
+     * @return A GridPane representing the label package
+     */
     private GridPane labelPackage(String courseName, String courseNum){
         GridPane labelPackage = new GridPane();
         labelPackage.setStyle("-fx-background-color: " + this.secondaryColor);
@@ -124,6 +129,11 @@ public class AddCourseComponent {
         return labelPackage;
     }
 
+    /**
+     * Generate a package which allows the user to remove it and
+     * see course information (should contain a labelPackage)
+     * @return A GridPane representing the package
+     */
     private GridPane addPackage(){
         GridPane addPackage = new GridPane();
         addPackage.setStyle("-fx-background-color: " + this.secondaryColor);
@@ -177,6 +187,9 @@ public class AddCourseComponent {
 
         if(this.courseList.getChildren().size() == this.maxNumCourses + 1){
             Alert alert = new Alert(Alert.AlertType.ERROR, "Cannot add more than " + this.maxNumCourses + " courses.", ButtonType.CLOSE);
+            alert.setTitle("Error");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("File:img\\AgendaBuilderFavicon.JPG"));
             alert.showAndWait();
             return;
         }
@@ -188,6 +201,9 @@ public class AddCourseComponent {
             return;
         if(this.selectedCourses.contains(courseName + courseNum)){
             Alert alert = new Alert(Alert.AlertType.ERROR, "Course has already been added.", ButtonType.CLOSE);
+            alert.setTitle("Error");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("File:img\\AgendaBuilderFavicon.JPG"));
             alert.showAndWait();
             return;
         }
