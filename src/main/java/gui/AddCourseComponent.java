@@ -84,7 +84,7 @@ public class AddCourseComponent {
      * Create a new logo
      */
     private ImageView logo(){
-        ImageView logo = new ImageView(new Image("File:img\\AgendaBuilderLogo3.JPG"));
+        ImageView logo = new ImageView(new Image("File:img\\AgendaBuilderHeader.png"));
         logo.setPreserveRatio(true);
         logo.setFitWidth(this.width + 26);
 
@@ -148,11 +148,13 @@ public class AddCourseComponent {
         //course list
         ChoiceBox<String> courseNames = new ChoiceBox<>();
         courseNames.setMinWidth(0.4 * (this.width - 2 * this.packagePadding));
+        courseNames.setMinHeight(0.6 * this.packageHeight);
         courseNames.getItems().addAll(this.courseMap.keySet());
 
         //course number
         ChoiceBox<String> courseNums = new ChoiceBox<>();
         courseNums.setMinWidth(0.25 * (this.width - 2 * this.packagePadding));
+        courseNums.setMinHeight(0.6 * this.packageHeight);
         courseNums.getItems().addAll();
 
         //set course numbers
