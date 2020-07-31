@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class UBCCourseActivityTest {
+public class CourseActivityTest {
 
     @Test
     public void getCourseTimesTest(){
