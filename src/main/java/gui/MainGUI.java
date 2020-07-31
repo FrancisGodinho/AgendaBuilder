@@ -52,7 +52,7 @@ public class MainGUI extends Application {
         //add to maingrid
         this.mainGrid.add(this.table, 1, 0, 1,2);
         this.mainGrid.add(courseSelection, 0, 0);
-        this.mainGrid.add(generateComp(), 0, 1);
+        this.mainGrid.add(generateComponent(), 0, 1);
 
         //set style
         this.mainGrid.setStyle("-fx-background-color: " + this.backgroundColor);
@@ -62,6 +62,9 @@ public class MainGUI extends Application {
         this.window.show();
     }
 
+    /**
+     * Method for the generate button
+     */
     private void generate(){
 
         //get the selected courses
@@ -71,7 +74,7 @@ public class MainGUI extends Application {
 
         //build a new agenda
         AgendaBuilder ab = new AgendaBuilder(this.xlParcer);
-        List<CourseActivity> courses = ab.buildAgenda(courseNames);
+        List<CourseActivity> courses = ab.buildAgenda_test(courseNames);
 
         //remove current table from maingrid and add a new table
         this.mainGrid.getChildren().remove(this.table);
@@ -79,7 +82,11 @@ public class MainGUI extends Application {
         this.mainGrid.add(this.table, 1, 0, 1, 2);
     }
 
-    private StackPane generateComp(){
+    /**
+     * Creates a generate button
+     * @return a new generate button
+     */
+    private StackPane generateComponent(){
         Button generate = new Button("Generate");
 
         generate.setStyle("-fx-background-color:" + this.backgroundColor + ";" + "-fx-font-size: 30;" + "-fx-border-color: grey;");
