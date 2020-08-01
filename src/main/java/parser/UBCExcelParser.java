@@ -27,11 +27,17 @@ public class UBCExcelParser implements ExcelParser {
         Iterator<Row> rowIt = dataSheet.iterator();
         Map<String, List<CourseActivity>> returnList = new HashMap<>();
 
+        //skip the header of excel file
+        rowIt.next();
+
         while(rowIt.hasNext()) {
             Row row = rowIt.next();
 
             // iterate on cells for the current row
             Iterator<Cell> cellIterator = row.cellIterator();
+
+            if(row.getCell(0) == null)
+                continue;
 
             String courseName = row.getCell(0).toString().toUpperCase();
             int courseNum = (int)row.getCell(1).getNumericCellValue();
@@ -39,8 +45,10 @@ public class UBCExcelParser implements ExcelParser {
             if(!courseNames.contains(courseName.toUpperCase() + courseNum))
                 continue;
 
-            UBC_CourseSection currSection = new UBC_CourseSection((int)row.getCell(2).getNumericCellValue(),
-                    row.getCell(3).toString(), row.getCell(4).toString(), row.getCell(5).toString());
+            String lab = row.getCell(3) == null ? " " : row.getCell(3).toString();
+            String tutorial = row.getCell(4) == null ? " " : row.getCell(4).toString();
+            String discussion = row.getCell(5) == null ? " " : row.getCell(5).toString();
+            UBC_CourseSection currSection = new UBC_CourseSection((int)row.getCell(2).getNumericCellValue(), lab, tutorial, discussion);
 
             List<Duration> durList = new ArrayList<>();
 

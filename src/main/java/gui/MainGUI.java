@@ -3,7 +3,9 @@ package main.java.gui;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -27,8 +29,9 @@ public class MainGUI extends Application {
     private final String backgroundColor = "#ECECED", secondaryColor = "#324ea8";
     private final int width = 1000, height = 1000;
 
+    private int maxNumCourses = 6;
     private final TimeTableComponent tableComp = new TimeTableComponent((int)(0.67 * width), height + 10, this.backgroundColor , this.secondaryColor);
-    private final AddCourseComponent addCourseComponent = new AddCourseComponent((int)(0.30 * width), height - 100, this.secondaryColor, this.backgroundColor, 7);
+    private final AddCourseComponent addCourseComponent = new AddCourseComponent((int)(0.30 * width), height - 100, this.secondaryColor, this.backgroundColor, this.maxNumCourses);
 
     private GridPane table;
     private final GridPane mainGrid = new GridPane();
@@ -69,12 +72,23 @@ public class MainGUI extends Application {
 
         //get the selected courses
         List<String> courseNames = this.addCourseComponent.getSelectedCourses();
-        System.out.println(courseNames);
-        this.addCourseComponent.clearList();
 
         //build a new agenda
         AgendaBuilder ab = new AgendaBuilder(this.xlParcer);
         List<CourseActivity> courses = ab.buildAgenda_test(courseNames);
+
+        //check if a schedule was found
+        if(courseNames.size() > 0 && courses.size() < courseNames.size()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "No valid schedule found. Try a different combination of classes.", ButtonType.OK);
+            alert.setTitle("No Schedule Found");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("File:img\\AgendaBuilderFavicon.JPG"));
+            alert.showAndWait();
+            return;
+        }
+
+        //clear the list
+        this.addCourseComponent.clearList();
 
         //remove current table from maingrid and add a new table
         this.mainGrid.getChildren().remove(this.table);
