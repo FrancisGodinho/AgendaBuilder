@@ -8,14 +8,14 @@ Below is a showcase of the AgendaBuilder in action.
 ![AgendaBuilder showcase](img/AgendaBuilderShowcase_1.png)
 
 ## Installation and Setup Instructions
-Clone this repository. 
-Add the Maven library `hu.blackbelt.bundles.poi:org.apache.poi:4.0.1_1` to your project (used to parse an excel file). 
-Make sure to install JavaFX: https://openjfx.io/openjfx-docs/.
+Clone this repository.   
+Add the Maven library `hu.blackbelt.bundles.poi:org.apache.poi:4.0.1_1` to your project (used to parse an excel file).  
+Make sure to install JavaFX: https://openjfx.io/openjfx-docs/.  
 
-To start HyperShopper:
+To start HyperShopper:  
 Run the main method in `MainGUI.java`
 
-To add more courses:
+To add more courses:  
 The `course_data` directory has 1) an excel file with course section and timing information, and 2) a text file containing all the possible courses the user can select from.  Both files should be edited in order to add additional courses.
 
 ## Reflection
@@ -25,13 +25,12 @@ One of the toughest challenges of this project was determining a method to solve
 
 This project helped develop our collaboration and teamwork skills. We learned to delegate tasks to each other and learned merge our ideas together. In addition, by the end of this project, we realized that we spent a lot of time implementing unsuccessful ideas, instead of spending time to better understand the problem, and properly plan and criticize our designs. This is a lesson we hope will encourage organization and reduce delays in future projects. 
 
-Currently, AgendaBuilder only supports the University of British Columbia. However, in the future, we hope to add more support for other schools. Another improvement we could make would be to take peoples’ work and leisure agendas into consideration. Furthermore, we could also optimize schedules based on breaks in between classes, lateness of classes, location of classes, and more. 
+Currently, AgendaBuilder only supports the University of British Columbia. However, in the future, we hope to add more support for other schools. Another improvement we could make would be to take peoples’ work and leisure agendas into consideration. Furthermore, we could also optimize schedules based on breaks in between classes, lateness of classes, location of classes, and more. Lastly, we would like to create a UBC API that will return course information, rather than relying on an excel database. This would allow all courses to be selectable and provide the most up to date information regarding course availability. 
 
 This project has helped us gain more experience with object oriented programing and also taught us a lot of important lessons. We hope that we can utilize what we have learned and carry it forward to future projects.
 
 Sources: 
-https://www.researchgate.net/publication/325033517_University_Time_Table_Scheduling_Using_Graph_Coloring_Technique
-
+https://www.researchgate.net/publication/325033517_University_Time_Table_Scheduling_Using_Graph_Coloring_Technique  
 https://www.researchgate.net/publication/221467927_QUICK_scheduler_a_time-saving_tool_for_scheduling_class_sections
 
 
