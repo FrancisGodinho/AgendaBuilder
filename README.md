@@ -31,6 +31,7 @@ This project has helped us gain more experience with object oriented programing 
 
 Sources: 
 https://www.researchgate.net/publication/325033517_University_Time_Table_Scheduling_Using_Graph_Coloring_Technique
+
 https://www.researchgate.net/publication/221467927_QUICK_scheduler_a_time-saving_tool_for_scheduling_class_sections
 
 
