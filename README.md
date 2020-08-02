@@ -9,7 +9,7 @@ Below is a showcase of the AgendaBuilder in action.
 
 ## Installation and Setup Instructions
 Clone this repository.   
-Add the Maven library `hu.blackbelt.bundles.poi:org.apache.poi:4.0.1_1` to your project (used to parse an excel file).  
+Add the Maven library `hu.blackbelt.bundles.poi:org.apache.poi:4.0.1_1` to your project (used to parse an excel file): https://mvnrepository.com/artifact/hu.blackbelt.bundles.poi/org.apache.poi/4.0.1_1.  
 Make sure to install JavaFX: https://openjfx.io/openjfx-docs/.  
 
 To start HyperShopper:  
