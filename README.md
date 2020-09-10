@@ -1,5 +1,5 @@
 # AgendaBuilder
-AgendaBuilder is a java application which assists post-secondary students with the course scheduling process.
+AgendaBuilder is a Java application that assists post-secondary students with the course scheduling process.
 
 After a student determines the courses they want to register for, they must choose sections such that there no course conflict exist. The vast number of sections can make this scheduling process time-consuming and tedious. AgendaBuilder allows a student to select the courses they plan on registering for and attempts to generate a valid combination of sections. Currently, AgendaBuilder supports the University of British Columbia.
 
@@ -19,7 +19,7 @@ To add more courses:
 The `course_data` directory has 1) an excel file with course section and timing information, and 2) a text file containing all the possible courses the user can select from.  Both files should be edited in order to add additional courses.
 
 ## Reflection
-AgendaBuilder is an application which schedules university courses. The goal of the project is to assist students with selecting course sections such that no course conflicts exist. A user can select a maximum of six courses, and AgendaBuilder will search for a valid combination of sections and display them on a timetable. Although the project presented its difficulties, it also taught us many valuable lessons.
+AgendaBuilder is a Java application that schedules university courses. The goal of the project is to assist students with selecting course sections such that no course conflicts exist. A user can select a maximum of six courses, and AgendaBuilder will search for a valid combination of sections and display them on a timetable. Although the project presented its difficulties, it also taught us many valuable lessons.
 
 One of the toughest challenges of this project was determining a method to solve the scheduling problem. Our first idea was to use graph coloring. Each vertex represented a course section and there was an edge between two sections if they conflicted with each other. After coloring the graph, each color group would represent non-conflicting sections and could be used to generate the schedule. However, we realized that there was a possibility of a color group containing all the sections of a particular course, which would prevent us from finding a solution even when one existed. Our second approach was to use genetic algorithms. We could generate many random schedules and continue to evolve them, maximizing a fitness function, until an adequate solution was found. Although this may have been successful, we realized that our scheduling problem was not as complex as we first thought. It is extremely rare for a student to take more than six courses, and each course has an average of around 10 sections, which meant that we would need to check 10^6 combinations at most. This is very possible to do in a reasonable amount of time, and to avoid over-complicating our solution, we decided to implement this method.
 
